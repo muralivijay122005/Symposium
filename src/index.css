@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pexico";
+  src: url("/fonts/PexicoMicro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-pexico {
+  font-family: "Pexico" !important;
+}
+
