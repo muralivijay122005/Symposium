@@ -1,0 +1,29 @@
+.pixel-btn {
+  background-image: url("./assets/pixel.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: fit-content; /* Let it wrap text + icon */
+  padding: 10px 20px; /* Add padding instead of fixed height */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.pixel-btn:hover {
+  animation: animate 0.5s steps(3) forwards;
+}
+
+@keyframes animate {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: -585px; /* Whole sprite scroll */
+  }
+}
