@@ -1,11 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import Hero from "./Hero";
-
+import SplashScreen from "./SplashScreen";
 const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
-    <div>
-      <Hero />
-    </div>
+    <>
+      {showSplash ? (
+        <SplashScreen onComplete={() => setShowSplash(false)} />
+      ) : (
+        <Hero />
+      )}
+    </>
   );
 };
 
