@@ -1,5 +1,6 @@
 import React from 'react'
 import Aurora from './components/Aurora';
+import Navbar from './components/Navbar';
 
 const Hero = () => {
   return (
@@ -16,6 +17,7 @@ const Hero = () => {
     <div className='font-modern-regular'>
       Text
     </div>
+    <Navbar/>
     </>
   )
 }
