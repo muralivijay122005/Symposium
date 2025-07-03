@@ -34,24 +34,24 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className=" font-pexico text-white text-center space-y-4 w-full max-w-md mx-auto z-10 relative">
-      <h1 className="text-3xl mb-4">Countdown</h1>
+    <div className=" font-modern text-white text-center space-y-4 w-full max-w-md mx-auto z-10 relative">
+      
       <div className="text-xl grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div>
-          <div className="text-4xl">{timeLeft.days}</div>
-          <div>Days</div>
+          <div className="text-xl">{timeLeft.days}</div>
+          <div className="text-xs">DAYS</div>
         </div>
         <div>
-          <div className="text-4xl">{timeLeft.hours}</div>
-          <div>Hours</div>
+          <div className="text-xl">{timeLeft.hours}</div>
+          <div className="text-xs">HOURS</div>
         </div>
         <div>
-          <div className="text-4xl">{timeLeft.minutes}</div>
-          <div>Minutes</div>
+          <div className="text-xl">{timeLeft.minutes}</div>
+          <div className="text-xs">MINUTES</div>
         </div>
         <div>
-          <div className="text-4xl">{timeLeft.seconds}</div>
-          <div>Seconds</div>
+          <div className="text-xl">{timeLeft.seconds}</div>
+          <div className="text-xs">SECONDS</div>
         </div>
       </div>
     </div>
