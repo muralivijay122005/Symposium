@@ -18,18 +18,18 @@ const ScrollReveal = ({
 }) => {
   const containerRef = useRef(null);
 
+  // Split text into word spans for animation
   const splitText = useMemo(() => {
-  const text = typeof children === 'string' ? children : '';
-  return text.split(/(\s+)/).map((word, index) => {
-    if (word.match(/^\s+$/)) return word;
-    return (
-      <span className="inline-block word" key={index}>
-        {word}
-      </span>
-    );
-  });
-}, [children]);
-
+    const text = typeof children === 'string' ? children : '';
+    return text.split(/(\s+)/).map((word, index) => {
+      if (word.match(/^\s+$/)) return word;
+      return (
+        <span className="inline-block word" key={index}>
+          {word}
+        </span>
+      );
+    });
+  }, [children]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -40,6 +40,7 @@ const ScrollReveal = ({
         ? scrollContainerRef.current
         : window;
 
+    // Rotation effect
     gsap.fromTo(
       el,
       { transformOrigin: '0% 50%', rotate: baseRotation },
@@ -58,6 +59,7 @@ const ScrollReveal = ({
 
     const wordElements = el.querySelectorAll('.word');
 
+    // Opacity animation
     gsap.fromTo(
       wordElements,
       { opacity: baseOpacity, willChange: 'opacity' },
@@ -75,6 +77,7 @@ const ScrollReveal = ({
       }
     );
 
+    // Blur animation (if enabled)
     if (enableBlur) {
       gsap.fromTo(
         wordElements,
@@ -94,15 +97,26 @@ const ScrollReveal = ({
       );
     }
 
+    // Clean up triggers on unmount
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
+  }, [
+    scrollContainerRef,
+    enableBlur,
+    baseRotation,
+    baseOpacity,
+    rotationEnd,
+    wordAnimationEnd,
+    blurStrength,
+  ]);
 
   return (
-    <h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
-      <p className={`text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
-    </h2>
+    <div ref={containerRef} className={`my-5 ${containerClassName}`}>
+      <p className={`text-xl leading-relaxed font-funnel text-white text-justify ${textClassName}`}>
+        {splitText}
+      </p>
+    </div>
   );
 };
 

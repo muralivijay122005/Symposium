@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Tech = ({refProp}) => {
+const Workshop = ({refProp}) => {
   return (
     <section ref={refProp} className="min-h-screen p-10 text-white">
-    <h2 className="text-3xl font-bold">Tech Events</h2>
+    <h2 className="text-3xl font-bold">Workshop</h2>
     <p>Details about technical events...</p>
   </section>
   )
 }
 
-export default Tech
+export default Workshop
