@@ -39,19 +39,19 @@ const Countdown = () => {
       <div className="text-xl grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div>
           <div className="text-xl">{timeLeft.days}</div>
-          <div className="text-xs">DAYS</div>
+          <div className="text-xs">Days</div>
         </div>
         <div>
           <div className="text-xl">{timeLeft.hours}</div>
-          <div className="text-xs">HOURS</div>
+          <div className="text-xs">Hours</div>
         </div>
         <div>
           <div className="text-xl">{timeLeft.minutes}</div>
-          <div className="text-xs">MINUTES</div>
+          <div className="text-xs">Minutes</div>
         </div>
         <div>
           <div className="text-xl">{timeLeft.seconds}</div>
-          <div className="text-xs">SECONDS</div>
+          <div className="text-xs">Seconds</div>
         </div>
       </div>
     </div>

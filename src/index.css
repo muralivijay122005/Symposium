@@ -50,3 +50,8 @@
 .animate-shine {
   animation: shine 5s linear infinite;
 }
+
+
+.blue-bg{
+  background-color: #0c0e29;
+}

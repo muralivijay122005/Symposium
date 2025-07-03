@@ -1,18 +1,14 @@
-import React,{useState} from "react";
+import {useState} from "react";
 import Hero from "./Hero";
-import SplashScreen from "./SplashScreen";
+
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 
   return (
     <>
-      {showSplash ? (
-        <SplashScreen onComplete={() => setShowSplash(false)} />
-      ) : (
-        <Hero />
-        
-      )}
-      
+    <div className="blue-bg min-h-screen">
+      <Hero />
+    </div>
     </>
   );
 };
