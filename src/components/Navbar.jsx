@@ -20,6 +20,7 @@ const Navbar = () => {
     panelHeight={68}
     baseItemSize={50}
     magnification={70}
+    className='z-10'
   /></div>
   )
 }

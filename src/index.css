@@ -1,42 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Modern-Regular";
-  src: url("/fonts/Sk-Modernist-Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Modern-Bold";
-  src: url("/fonts/Sk-Modernist-Bold.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Modern-Mono";
-  src: url("/fonts/Sk-Modernist-Mono.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.font-modern {
-  font-family: "Modern-Regular", sans-serif !important;
-}
-
-.font-modern-bold {
-  font-family: "Modern-Bold", sans-serif !important;
-  font-weight: bold;
-}
-
-.font-modern-mono {
-  font-family: "Modern-Mono", monospace !important;
-}
-
 
 @keyframes shine {
   0% {
@@ -51,7 +14,46 @@
   animation: shine 5s linear infinite;
 }
 
-
-.blue-bg{
+.blue-bg {
   background-color: #0c0e29;
+}
+
+
+.font-funnel {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-funnel-light {
+  font-weight: 300;
+}
+.font-funnel-regular {
+  font-weight: 400;
+}
+.font-funnel-medium {
+  font-weight: 500;
+}
+.font-funnel-semibold {
+  font-weight: 600;
+}
+.font-funnel-bold {
+  font-weight: 700;
+}
+.font-funnel-extrabold {
+  font-weight: 800;
+}
+
+.scroll-reveal {
+  margin: 20px 0;
+}
+
+.scroll-reveal-text {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.word {
+  display: inline-block;
 }

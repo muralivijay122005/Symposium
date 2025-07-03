@@ -1,5 +1,5 @@
 import React from "react";
-import TiltedCard from "../components/TiltedCard.jsx";
+//import TiltedCard from "../components/TiltedCard.jsx";
 import SpotlightCard from "../components/SpotlightCard.jsx";
 
 const Tech = () => {

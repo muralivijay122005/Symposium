@@ -3,15 +3,21 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-     keyframes: {
-      shine: {
-           '0%': { 'background-position': '100%' },
-           '100%': { 'background-position': '-100%' },
+      fontFamily: {
+        funnel: ['Funnel Sans', 'sans-serif'], 
+      },
+      keyframes: {
+        shine: {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
         },
-       },
-       animation: {
-         shine: 'shine 5s linear infinite',
-       },
+      },
+      animation: {
+        shine: "shine 5s linear infinite",
+      },
+      colors: {
+        "blue-bg": "#0c0e29",
+      },
     },
   },
   plugins: [],
