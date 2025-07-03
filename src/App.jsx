@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Map from "./pages/Map.jsx";
 
 const App = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
     <div className="blue-bg min-h-screen">
+      
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/ntecheve" element={<Ntech/>}></Route>
         <Route path="/workshop" element={<Tech/>}></Route>
       </Routes>
+      <Map/>
     </div>
     </>
   );
