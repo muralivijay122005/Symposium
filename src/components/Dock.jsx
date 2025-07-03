@@ -139,7 +139,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-full backdrop-blur-md fixed border-white/20 border-2 pb-2 px-4`}
+        className={`${className} absolute bottom-2 mb-5 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-full backdrop-blur-md fixed border-white/20 border-2 pb-2 px-4`}
         style={{
           height: panelHeight + 5 ,
         }}

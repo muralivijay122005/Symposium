@@ -42,9 +42,9 @@ const Countdown = () => {
           { label: "Min", value: timeLeft.minutes },
           { label: "Sec", value: timeLeft.seconds },
         ].map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center ">
-            <div className="text-6xl">{item.value}</div>
-            <div className="text-3xl">{item.label}</div>
+          <div key={idx} className="flex flex-col items-center uppercase ">
+            <div className="text-5xl">{item.value}</div>
+            <div className="text-2xl">{item.label}</div>
           </div>
         ))}
       </div>

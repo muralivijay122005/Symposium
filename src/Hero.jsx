@@ -14,17 +14,17 @@ const Hero = () => {
       />
 
       {/* NOCTIVUS Title */}
-      <div className="absolute top-60 w-full text-center text-white text-6xl font-funnel">
+      <div className="absolute top-60 w-full text-center text-white text-5xl font-funnel">
         Noctivus '25
       </div>
 
       {/* Shiny Button centered below title */}
       <button className="absolute top-130 left-1/2 transform -translate-x-1/2 px-7 py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none">
         <ShinyText
-          text="Register Now"
+          text="REGSITER NOW"
           disabled={false}
           speed={5}
-          className="text-3xl"
+          className="text-2xl"
         />
       </button>
 
