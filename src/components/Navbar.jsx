@@ -11,7 +11,7 @@ const Navbar = () => {
     // { icon: <VscArchive size={18} />, label: 'About us', onClick: () => navigate("/techeve") },
     { icon: <VscAccount size={18} />, label: 'Tech event', onClick: () => navigate('/techeve') },
     { icon: <VscSettingsGear size={18} />, label: 'Non tech', onClick: () => navigate('ntecheve') },
-    { icon: <VscSettingsGear size={18} />, label: 'Workshop', onClick: () => navigate('workship') },
+    { icon: <VscSettingsGear size={18} />, label: 'Workshop', onClick: () => navigate('workshop') },
   ];
   return (
     <div><Dock 
