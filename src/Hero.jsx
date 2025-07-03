@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-70 bg-blue-950 overflow-hidden">
+    <div className="relative w-full h-screen bg-blue-950 overflow-hidden">
       <Aurora
         colorStops={["#3A29FF", "#00FFFF"]}
         blend={7}
@@ -14,21 +14,21 @@ const Hero = () => {
       />
 
       {/* NOCTIVUS Title */}
-      <div className="absolute top-20 w-full text-center text-white text-lg font-modern-bold">
-        NOCTIVUS '25
+      <div className="absolute top-60 w-full text-center text-white text-6xl font-funnel">
+        Noctivus '25
       </div>
 
       {/* Shiny Button centered below title */}
-      <button className="absolute top-28 left-1/2 transform -translate-x-1/2 px-3 py-1 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-0.5 text-white font-modern leading-none">
+      <button className="absolute top-130 left-1/2 transform -translate-x-1/2 px-7 py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none">
         <ShinyText
           text="Register Now"
           disabled={false}
           speed={5}
-          className="text-xs"
+          className="text-3xl"
         />
       </button>
 
-      <div className='absolute top-40 left-1/2 transform -translate-x-1/2'><Countdown /></div>
+      <div className='absolute top-90 left-1/2 transform -translate-x-1/2'><Countdown /></div>
       
     </div>
   );
