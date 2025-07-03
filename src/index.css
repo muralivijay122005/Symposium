@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Modern";
+  src: url("/public/fonts/Sk-Modernist-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-modern-regular {
+  font-family: "Modern" !important;
+}
+
+@font-face {
+  font-family: "Modern";
+  src: url("/public/fonts/Sk-Modernist-Bold.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-modern-bold {
+  font-family: "Modern" !important;
+}
+
+@font-face {
+  font-family: "Modern";
+  src: url("/public/fonts/Sk-Modernist-Mono.otf") format("otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-modern-mono {
+  font-family: "Modern" !important;
+}
+
+
