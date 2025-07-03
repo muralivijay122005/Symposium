@@ -2,14 +2,16 @@
 import React from 'react'
 import { VscHome, VscArchive, VscAccount, VscSettingsGear } from "react-icons/vsc";
 import Dock from './Dock.jsx'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const items = [
-    { icon: <VscHome size={18} />, label: 'About us', onClick: () => alert('Home!') },
-    { icon: <VscArchive size={18} />, label: 'Arc', onClick: () => alert('Archive!') },
-    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => alert('Settings!') },
-    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => alert('Settings!') },
+    { icon: <VscHome size={18} />, label: 'home', onClick: () => navigate("/") },
+    // { icon: <VscArchive size={18} />, label: 'About us', onClick: () => navigate("/techeve") },
+    { icon: <VscAccount size={18} />, label: 'Tech event', onClick: () => navigate('/techeve') },
+    { icon: <VscSettingsGear size={18} />, label: 'Non tech', onClick: () => navigate('ntecheve') },
+    { icon: <VscSettingsGear size={18} />, label: 'Workshop', onClick: () => navigate('workship') },
   ];
   return (
     <div><Dock 
