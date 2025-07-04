@@ -9,12 +9,9 @@ const About = ({ refProp }) => {
     <section ref={refProp}>
       <div className='flex flex-row p-20'>
         <div className="font-funnel text-blue-50 text-2xl w-full flex flex-col items-center overflow-hidden ">
-          <p>ABOUT US</p>
-          <ScrollFloat className="hidden"></ScrollFloat>
-          <hr className='border-0.5 border-white/20 w-full' />
+          <p className="pb-10">NOCTIVUS UNVEILED</p>
           
-
-
+          <hr className='border-0.5 border-white/20 w-full' />
           <ScrollReveal
             baseOpacity={0.2}
             enableBlur={true}
@@ -24,7 +21,7 @@ const About = ({ refProp }) => {
             easing="ease-out"
 
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, velit unde labore quas, esse magni, asperiores facere sed illum accusamus porro reiciendis repellat cupiditate omnis suscipit necessitatibus vel saepe dicta! Unde numquam facilis distinctio eius tenetur. Excepturi numquam commodi at non molestiae eligendi doloribus quisquam doloremque! Quis quas asperiores, vel repellendus minus nemo recusandae aliquam laborum deserunt veniam? Sunt saepe repellat dolores rem debitis exercitationem voluptates molestias enim? Ex facilis sint cum minima accusamus iure autem iusto tenetur! Tenetur maiores reiciendis magnam nihil quidem dolore consequatur? Quae minima nostrum ad, ratione ipsam eaque non, repellat, reprehenderit nemo deserunt in repudiandae!
+            Noctivus is the annual national-level symposium organized by the Department of Computer Science and Engineering (Cyber Security) at Velammal Engineering College. This event serves as a dynamic platform for students to showcase their skills, explore emerging technologies, and engage in meaningful discussions around the rapidly evolving field of cyber security. With a mission to inspire innovation and foster technical excellence, Noctivus features a diverse lineup of events including technical competitions, non-technical challenges, and hands-on workshops conducted by industry professionals. Whether you’re a tech enthusiast, a creative thinker, or someone eager to dive into the world of cyber defense, Noctivus offers something for everyone. The symposium not only encourages academic and professional growth but also builds a community of learners and leaders passionate about digital security. Join us at Noctivus to connect, compete, and contribute to shaping a smarter and safer digital future.
           </ScrollReveal>
 
         </div>

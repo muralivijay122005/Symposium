@@ -1,5 +1,5 @@
-import React from 'react';
-import SpotlightCard from '../components/SpotlightCard'; // Adjust path as needed
+import SpotlightCard from '../components/SpotlightCard';
+import { FaRegUser } from "react-icons/fa";
 
 const coordinators = {
   staff: [
@@ -47,13 +47,13 @@ const coordinators = {
 const Footer = ({ refProp }) => {
   return (
     <section ref={refProp} className="min-h-screen px-40 text-white">
-      <h2 className="text-3xl font-funnel text-center pb-10">CONTACT DETAILS</h2>
+      <h2 className="text-2xl font-funnel text-center pb-10">COORDINATORS</h2>
       <hr className='border-0.5 border-white/20 w-full mb-10' />
 
       {/* Staff Coordinators */}
       <div className="space-y-6 mb-16">
         <h3 className="text-2xl font-funnel pb-4">Staff Coordinators</h3>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {coordinators.staff.map((person, index) => (
             <SpotlightCard
               key={index}
@@ -61,9 +61,9 @@ const Footer = ({ refProp }) => {
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
               <div className="flex flex-col md:flex-row font-funnel items-center gap-20">
-                <img src={person.image} alt={person.name} className="w-40 h-40 border border-blue-800 object-cover rounded-xl shadow-md" />
+                <img src={person.image} alt={person.name} className="w-30 h-30 rounded-full border border-blue-800 object-cover shadow-md" />
                 <div className="text-left text-xl">
-                  <h3 className="font-semibold">{person.name}</h3>
+                  <h3 className="">{person.name}</h3>
                   <p className="opacity-80">{person.phone}</p>
                   <p className="opacity-80">{person.email}</p>
                 </div>
@@ -74,8 +74,8 @@ const Footer = ({ refProp }) => {
       </div>
 
       {/* Student Coordinators */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-semibold pb-4">Student Coordinators</h3>
+      <div className="space-y-6 font-funnel">
+        <h3 className="text-2xl pb-4">Student Coordinators</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {coordinators.students.map((person, index) => (
             <SpotlightCard
@@ -83,11 +83,13 @@ const Footer = ({ refProp }) => {
               className="custom-spotlight-card"
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
-              <div className="flex flex-col md:flex-row items-center gap-6 p-4">
-                <div className="text-left text-xl">
-                  <h3 className="font-semibold">{person.name}</h3>
-                  <p className="opacity-80">{person.phone}</p>
-                  <p className="opacity-80">{person.email}</p>
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="text-left text-xl flex flex-row items-center gap-6">
+                  <div className='rounded-full w-20 h-20 bg-white/10 items-center flex justify-center'><FaRegUser size={25}/></div>
+                  <div>
+                    <h3 className="">{person.name}</h3>
+                    <p className="opacity-80">{person.phone}</p>
+                  </div>
                 </div>
               </div>
             </SpotlightCard>

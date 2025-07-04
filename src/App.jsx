@@ -7,7 +7,7 @@ import Ntech from "./pages/Ntech";
 import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import ClickSpark from './components/ClickSpark';
-import Footer from "./pages/Footer";
+import Coordinators from "./pages/Coordinators";
 
 const App = () => {
   const aboutRef = useRef(null);
@@ -32,7 +32,7 @@ const App = () => {
         <Ntech refProp={ntechRef} />
         <Workshop refProp={workshopRef} />
         <Map/>
-        <Footer refProp={contactRef} />
+        <Coordinators refProp={contactRef} />
         <Navbar
           scrollToAbout={() => aboutRef.current?.scrollIntoView({ behavior: "smooth" })}
           scrollToTech={() => techRef.current?.scrollIntoView({ behavior: "smooth" })}
