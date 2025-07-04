@@ -7,13 +7,15 @@ import Ntech from "./pages/Ntech";
 import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import ClickSpark from './components/ClickSpark';
+import Footer from "./pages/Footer";
 
 const App = () => {
   const aboutRef = useRef(null);
   const techRef = useRef(null);
   const ntechRef = useRef(null);
   const workshopRef = useRef(null);
-  const mapRef = useRef(null);
+  const contactRef = useRef(null);
+
 
   return (
     <div className="blue-bg min-h-screen">
@@ -29,13 +31,14 @@ const App = () => {
         <Tech refProp={techRef} />
         <Ntech refProp={ntechRef} />
         <Workshop refProp={workshopRef} />
-        <Map refProp={mapRef} />
+        <Map/>
+        <Footer refProp={contactRef} />
         <Navbar
           scrollToAbout={() => aboutRef.current?.scrollIntoView({ behavior: "smooth" })}
           scrollToTech={() => techRef.current?.scrollIntoView({ behavior: "smooth" })}
           scrollToNtech={() => ntechRef.current?.scrollIntoView({ behavior: "smooth" })}
           scrollToWorkshop={() => workshopRef.current?.scrollIntoView({ behavior: "smooth" })}
-          scrollToMap={() => mapRef.current?.scrollIntoView({ behavior: "smooth" })}
+          scrollToContact={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })}
         />
       </ClickSpark>
     </div>
