@@ -57,3 +57,7 @@
 .word {
   display: inline-block;
 }
+
+body{
+  cursor: none;
+}

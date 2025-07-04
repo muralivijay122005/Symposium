@@ -1,13 +1,10 @@
 import ScrollReveal from "./../components/ScrollReveal";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
-import ScrollFloat from "../components/ScrollFloat";
 const About = ({ refProp }) => {
   return (
 
     <section ref={refProp}>
-      <div className='flex flex-row p-20'>
+      <div className='flex flex-row px-40 py-20'>
         <div className="font-funnel text-blue-50 text-2xl w-full flex flex-col items-center overflow-hidden ">
           <p className="pb-10">NOCTIVUS UNVEILED</p>
           

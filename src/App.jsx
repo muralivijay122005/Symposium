@@ -7,6 +7,7 @@ import Ntech from "./pages/Ntech";
 import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import ClickSpark from './components/ClickSpark';
+import CustomCursor from './components/CustomCursor';
 import Coordinators from "./pages/Coordinators";
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
 
 
   return (
-    <div className="blue-bg min-h-screen">
+    <div className="bg-black min-h-screen relative">
+      <CustomCursor />
       <ClickSpark
         sparkColor="#fff"
         sparkSize={10}
@@ -26,13 +28,15 @@ const App = () => {
         sparkCount={8}
         duration={400}
       >
+        
         <Hero />
         <About refProp={aboutRef} />
         <Tech refProp={techRef} />
         <Ntech refProp={ntechRef} />
         <Workshop refProp={workshopRef} />
-        <Map/>
+        
         <Coordinators refProp={contactRef} />
+        <Map/>
         <Navbar
           scrollToAbout={() => aboutRef.current?.scrollIntoView({ behavior: "smooth" })}
           scrollToTech={() => techRef.current?.scrollIntoView({ behavior: "smooth" })}

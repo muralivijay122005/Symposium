@@ -61,7 +61,7 @@ const Footer = ({ refProp }) => {
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
               <div className="flex flex-col md:flex-row font-funnel items-center gap-20">
-                <img src={person.image} alt={person.name} className="w-30 h-30 rounded-full border border-blue-800 object-cover shadow-md" />
+                <img src={person.image} alt={person.name} className="w-30 h-30 rounded-full border border-white object-cover shadow-md" />
                 <div className="text-left text-xl">
                   <h3 className="">{person.name}</h3>
                   <p className="opacity-80">{person.phone}</p>

@@ -34,7 +34,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="font-modern text-white text-center space-y-4 w-full max-w-md mx-auto z-10 font-funnel relative">
+    <div className="font-semibold text-white text-center space-y-4 w-full max-w-md mx-auto z-10 font-funnel relative">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-30 items-center">
         {[
           { label: "Days", value: timeLeft.days },
