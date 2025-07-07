@@ -64,30 +64,30 @@ const EventPopup = ({ event, onClose }) => {
             </button>
 
             {/* Content */}
-            <h2 className="text-xl font-medium">{event.title}</h2>
+            <h2 className="text-lg font-medium">{event.title}</h2>
 
             <div>
-              <h3 className="text-lg font-medium mb-1"> Schedule:</h3>
-              <p className="text-lg whitespace-pre-line text-neutral-300">
+              <h3 className="text-md font-medium mb-1"> Schedule:</h3>
+              <p className="text-md whitespace-pre-line text-neutral-300">
                 {event.schedule}
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-medium mb-1"> Overview:</h3>
-              <p className="text-lg text-neutral-300">{event.overview}</p>
+              <h3 className="text-md font-medium mb-1"> Overview:</h3>
+              <p className="text-md text-neutral-300">{event.overview}</p>
             </div>
 
             <div>
-              <h3 className="text-lg font-medium mb-1"> Format:</h3>
-              <p className="text-lg whitespace-pre-line text-neutral-300">
+              <h3 className="text-md font-medium mb-1"> Format:</h3>
+              <p className="text-md whitespace-pre-line text-neutral-300">
                 {event.format}
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-medium mb-1"> Rules:</h3>
-              <ul className="list-disc list-inside text-lg text-neutral-300">
+              <h3 className="text-md font-medium mb-1"> Rules:</h3>
+              <ul className="list-disc list-inside text-md text-neutral-300">
                 {event.rules.map((rule, i) => (
                   <li key={i}>{rule}</li>
                 ))}
