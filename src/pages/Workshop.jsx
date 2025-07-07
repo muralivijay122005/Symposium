@@ -7,7 +7,7 @@ const Workshop = ({ refProp }) => {
       ref={refProp}
       className="px-14 sm:px-10 md:px-20 lg:px-32 font-funnel text-white"
     >
-      <h2 className="text-2xl text-center pt-10 mb-10">WORKSHOP</h2>
+      <h2 className="text-lg text-center pt-10 mb-10">WORKSHOP</h2>
       <hr className="border-0.5 border-white/20 w-full mb-10" />
 
       <SpotlightCard
@@ -30,13 +30,13 @@ const Workshop = ({ refProp }) => {
                 <VscTools className="text-white text-xl sm:text-2xl" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
+              <h3 className="text-xl sm:text-xl font-semibold text-white">
                 CyberSec Hands-On Workshop
               </h3>
             </div>
 
             {/* Description */}
-            <p className="text-white/70 text-base md:text-lg leading-relaxed text-center md:text-left">
+            <p className="text-white/70 text-base md:text-md leading-relaxed text-center md:text-left">
               Dive deep into real-world cybersecurity techniques in this
               hands-on workshop led by industry experts. Learn ethical hacking,
               penetration testing, and digital forensics in an interactive

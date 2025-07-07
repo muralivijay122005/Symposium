@@ -42,7 +42,7 @@ const Countdown = () => {
         { label: "Sec", value: timeLeft.seconds },
       ].map((item, idx) => (
         <div key={idx} className="flex flex-col items-center">
-          <div className="text-4xl md:text-6xl font-medium">{item.value}</div>
+          <div className="text-4xl md:text-5xl font-medium">{item.value}</div>
           <div className="text-sm md:text-xl text-white/50 uppercase">
             {item.label}
           </div>

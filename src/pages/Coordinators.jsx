@@ -50,12 +50,12 @@ const Coordinators = ({ refProp }) => {
       ref={refProp}
       className="min-h-screen px-14 sm:px-10 md:px-16 lg:px-40 xl:px-40 text-white"
     >
-      <h2 className="text-2xl font-funnel text-center py-10">COORDINATORS</h2>
+      <h2 className="text-lg font-funnel text-center py-10">COORDINATORS</h2>
       <hr className="border-0.5 border-white/20 w-full mb-10" />
 
       {/* Staff Coordinators */}
       <div className="space-y-6 mb-16">
-        <h3 className="text-2xl font-funnel text-white/50 pb-2">
+        <h3 className="text-lg font-funnel text-white/50 pb-2">
           Staff Coordinators
         </h3>
         <div className="grid md:grid-cols-2 gap-8">
@@ -71,7 +71,7 @@ const Coordinators = ({ refProp }) => {
                   alt={person.name}
                   className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-white object-cover"
                 />
-                <div className="text-center sm:text-left text-lg sm:text-xl">
+                <div className="text-center sm:text-left text-md sm:text-md">
                   <h3>{person.name}</h3>
                   <p className="opacity-80">{person.phone}</p>
                   <p className="opacity-80">{person.email}</p>
@@ -84,7 +84,7 @@ const Coordinators = ({ refProp }) => {
 
       {/* Student Coordinators */}
       <div className="space-y-6 font-funnel">
-        <h3 className="text-2xl text-white/50 pb-2">Student Coordinators</h3>
+        <h3 className="text-lg text-white/50 pb-2">Student Coordinators</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {coordinators.students.map((person, index) => (
             <SpotlightCard
@@ -96,7 +96,7 @@ const Coordinators = ({ refProp }) => {
                 <div className="rounded-full w-16 h-16 bg-white/10 flex items-center justify-center">
                   <FaRegUser size={24} />
                 </div>
-                <div className="text-left text-lg sm:text-xl">
+                <div className="text-left text-md sm:text-md">
                   <h3 className="text-white">{person.name}</h3>
                   <p className="text-white/60">{person.phone}</p>
                 </div>
