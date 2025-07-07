@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shine {
+  animation: shine 5s linear infinite;
+}
+
+.blue-bg {
+  background-color: #0c0e29;
+}
+
+.font-funnel {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-funnel-light {
+  font-weight: 300;
+}
+.font-funnel-regular {
+  font-weight: 400;
+}
+.font-funnel-medium {
+  font-weight: 500;
+}
+.font-funnel-semibold {
+  font-weight: 600;
+}
+.font-funnel-bold {
+  font-weight: 700;
+}
+.font-funnel-extrabold {
+  font-weight: 800;
+}
+
+.scroll-reveal {
+  margin: 20px 0;
+}
+
+.scroll-reveal-text {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.word {
+  display: inline-block;
+}
+
+body {
+  cursor: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

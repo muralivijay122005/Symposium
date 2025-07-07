@@ -1,12 +1,12 @@
-frontend/node_modules/
-backend/node_modules/
+node_modules/
+
 
 # Ignore build output from React
 frontend/build/
 
 # Ignore environment files
 frontend/.env
-backend/.env
+
 
 # Logs
 *.log

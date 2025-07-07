@@ -1,0 +1,52 @@
+import { useNavigate } from "react-router-dom";
+import ShinyText from "./components/ShinyText";
+import Aurora from "./components/Aurora";
+import Countdown from "./Countdown";
+
+const Hero = () => {
+  const navigate = useNavigate(); // React Router hook
+
+  return (
+    <div className="relative w-full h-screen bg-black overflow-hidden">
+      {/* Aurora background */}
+      <Aurora
+        colorStops={["#3A29FF", "#00FFFF"]}
+        blend={20}
+        amplitude={1.2}
+        speed={0.7}
+      />
+
+      {/* Logo */}
+      <img
+        src="/Logo.png"
+        alt="Noctivus Logo"
+        className="absolute left-1/2 transform -translate-x-1/2 top-10 md:top-0 w-[400px] md:w-[440px] max-w-full z-50 mx-auto mix-blend-screen"
+      />
+
+      {/* Title */}
+      <div className="absolute top-100 md:top-90 w-full text-center text-white text-4xl md:text-5xl font-funnel font-medium">
+        Noctivus '25
+      </div>
+
+      {/* Countdown */}
+      <div className="absolute top-120 md:top-110 left-1/2 transform -translate-x-1/2">
+        <Countdown />
+      </div>
+
+      {/* Register Button */}
+      <button
+        onClick={() => navigate("/codeofconduct")}
+        className="absolute top-150 md:top-140 left-1/2 transform -translate-x-1/2 px-6 py-3 md:py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none"
+      >
+        <ShinyText
+          text="REGISTER NOW"
+          disabled={false}
+          speed={5}
+          className="text-lg md:text-xl"
+        />
+      </button>
+    </div>
+  );
+};
+
+export default Hero;
