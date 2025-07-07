@@ -2,7 +2,7 @@ const Map = () => {
   return (
     <div className="flex flex-col items-center px-14 sm:px-10 md:px-14 lg:px-40 py-16 w-full">
       <div className="w-full  font-funnel text-blue-50 text-2xl flex flex-col items-center overflow-hidden gap-10">
-        <p className="text-center">FIND US</p>
+        <p className="text-center text-lg">FIND US</p>
         <hr className="border-0.5 border-white/20 w-full" />
 
         <div className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-2xl">

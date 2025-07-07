@@ -182,11 +182,11 @@ const Timeline = () => {
 
   return (
     <section className="px-14 sm:px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
-      <h2 className="text-2xl text-center mb-6 pt-20">EVENT TIMELINE</h2>
+      <h2 className="text- text-center mb-6 pt-20">EVENT TIMELINE</h2>
       <hr className="border-0.5 border-white/20 w-full mb-6" />
 
       <div className="w-full overflow-x-auto">
-        <div className="rounded-2xl border border-white/20 bg-white/5 p-6 min-w-[820px]">
+        <div className="rounded-lg border border-white/20 bg-white/5 p-6 min-w-[820px]">
           {/* Time Labels */}
           <div className="relative w-full mb-6" style={{ height: "40px" }}>
             {[...Array(totalHalfHours)].map((_, i) => {
@@ -198,7 +198,7 @@ const Timeline = () => {
               return (
                 <div
                   key={i}
-                  className="absolute text-white/70 text-xl uppercase transform -translate-x-1/2"
+                  className="absolute text-white/70 text-lg uppercase transform -translate-x-1/2"
                   style={{ left: `${(i / totalHalfHours) * 100}%` }}
                 >
                   {hour}:{min}
@@ -248,7 +248,7 @@ const Timeline = () => {
                 >
                   <div className="flex items-center gap-3 text-base h-full">
                     <Icon className={`w-5 h-5 shrink-0 ${icon}`} />
-                    <span className="truncate">{event.title}</span>
+                    <span className="truncate text-sm">{event.title}</span>
                   </div>
                 </div>
               );
