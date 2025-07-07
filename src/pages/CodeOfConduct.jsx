@@ -99,8 +99,8 @@ const CodeOfConduct = () => {
           </div>
 
           <div className="flex flex-row items-center gap-2 bg-red-600 w-fit p-1 px-3 rounded-md mx-auto  justify-center">
-            <IoWarningOutline className=""/>
-            <p className="">
+            <IoWarningOutline className="text-white"/>
+            <p className="text-white">
               Violations may result in warnings, disqualification, or removal from the event at the discretion of the organizers.
             </p>
           </div>
