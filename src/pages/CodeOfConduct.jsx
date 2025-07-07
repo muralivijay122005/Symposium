@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Aurora from "./../components/Aurora";
 import { IoWarningOutline } from "react-icons/io5";
-
+import { useNavigate } from "react-router-dom";
 const CodeOfConduct = () => {
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();

@@ -62,14 +62,14 @@ const Coordinators = ({ refProp }) => {
           {coordinators.staff.map((person, index) => (
             <SpotlightCard
               key={index}
-              className="custom-spotlight-card"
+              className="custom-spotlight-card py-3 sm:py-4 min-h-[120px]"
               spotlightColor="rgba(0, 150, 255, 0.3)"
             >
               <div className="flex flex-col sm:flex-row font-funnel items-center gap-8 sm:gap-12">
                 <img
                   src={person.image}
                   alt={person.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-white object-cover"
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-white object-cover"
                 />
                 <div className="text-center sm:text-left text-md sm:text-md">
                   <h3>{person.name}</h3>
@@ -89,7 +89,7 @@ const Coordinators = ({ refProp }) => {
           {coordinators.students.map((person, index) => (
             <SpotlightCard
               key={index}
-              className="custom-spotlight-card"
+              className="custom-spotlight-card h-auto py-4 sm:py-6"
               spotlightColor="rgba(80, 200, 130, 0.3)"
             >
               <div className="flex items-center gap-6">
