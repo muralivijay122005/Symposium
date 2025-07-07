@@ -38,20 +38,20 @@ const CodeOfConduct = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 px-8 md:px-20 lg:px-40 py-20 max-h-full overflow-y-auto">
-        <h1 className="text-xl md:text-2xl text-center mb-6">CODE OF CONDUCT</h1>
+        <h1 className="text-lg md:text-xl text-center mb-6">CODE OF CONDUCT</h1>
         <hr className="border-0.5 border-white/20 w-full mb-10" />
 
-        <div className="space-y-10 text-white/60 leading-7 text-xl">
+        <div className="space-y-10 text-white/60 leading-7 text-lg">
           {/* Sections */}
           <div>
-            <h2 className="text-xl text-white mb-2">1. Purpose & Scope</h2>
+            <h2 className=" text-white mb-2">1. Purpose & Scope</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>This Code of Conduct ensures a safe, inclusive, and professional environment for all participants — including volunteers, organizers, and guests — attending in-person or virtually. Everyone is expected to uphold the dignity and academic integrity of our institution.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl text-white mb-2">2. Expected Behavior</h2>
+            <h2 className=" text-white mb-2">2. Expected Behavior</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>Respect others and maintain professionalism throughout the event.</li>
               <li>Promote inclusivity and a welcoming environment for all.</li>
@@ -60,7 +60,7 @@ const CodeOfConduct = () => {
           </div>
 
           <div>
-            <h2 className="text-xl text-white mb-2">3. Unacceptable Behavior</h2>
+            <h2 className=" text-white mb-2">3. Unacceptable Behavior</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>Harassment or discrimination of any kind — verbal, physical, sexual, online, or identity-based.</li>
               <li>Cheating, plagiarism, falsifying data, or unauthorized system access.</li>
@@ -69,7 +69,7 @@ const CodeOfConduct = () => {
           </div>
 
           <div>
-            <h2 className="text-xl text-white mb-2">4. Privacy & Data Use</h2>
+            <h2 className=" text-white mb-2">4. Privacy & Data Use</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>Data collected is used solely for registration and event communication.</li>
               <li>Submissions and media may be archived for academic or promotional use.</li>
@@ -79,7 +79,7 @@ const CodeOfConduct = () => {
           </div>
 
           <div>
-            <h2 className="text-xl text-white mb-2">5. Rules for Participation</h2>
+            <h2 className=" text-white mb-2">5. Rules for Participation</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>Carry your college ID during the event.</li>
               <li>Register in advance via the official form.</li>
@@ -90,7 +90,7 @@ const CodeOfConduct = () => {
           </div>
 
           <div>
-            <h2 className="text-xl text-white mb-2">6. Photo/Media Consent</h2>
+            <h2 className="text-white mb-2">6. Photo/Media Consent</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>The event will be recorded and photographed.</li>
               <li>By participating, you agree to the use of photos, videos, or your project for academic, promotional, and social media purposes.</li>
@@ -98,9 +98,9 @@ const CodeOfConduct = () => {
             </ul>
           </div>
 
-          <div className="flex flex-row items-center gap-2">
-            <IoWarningOutline />
-            <p>
+          <div className="flex flex-row items-center gap-2 bg-red-600 w-fit p-1 px-3 rounded-md mx-auto  justify-center">
+            <IoWarningOutline className=""/>
+            <p className="">
               Violations may result in warnings, disqualification, or removal from the event at the discretion of the organizers.
             </p>
           </div>
@@ -108,19 +108,19 @@ const CodeOfConduct = () => {
           {/* Signature Message */}
           <div className="text-center text-white mt-12 text-xl">
             Let’s keep Noctivus awesome. <br />
-            <span className="text-blue-400 font-semibold">
+            <span className="text-blue-400">
               Code hard. Stay chill. Respect always.
             </span>
           </div>
 
           {/* Checkbox + Button */}
           <div className="mt-16 flex flex-col items-center justify-center gap-6">
-            <label className="flex items-center gap-3 text-white/80 text-lg">
+            <label className="flex items-center gap-3 text-white/80 text-lg ">
               <input
                 type="checkbox"
                 checked={agreed}
                 onChange={handleAgreeChange}
-                className="accent-blue-500 w-5 h-5"
+                className="accent-blue-500 w-5 h-5 "
               />
               I have read and agree to the Code of Conduct.
             </label>

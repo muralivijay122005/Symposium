@@ -4,7 +4,7 @@ import Hero from "./Hero";
 import About from "./pages/About";
 import Tech from "./pages/Tech";
 import Timeline from "./pages/Timeline";
-import NonTech from "./pages/Nontech";
+import NonTech from "./pages/NonTech";
 import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import Coordinators from "./pages/Coordinators";

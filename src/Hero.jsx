@@ -24,25 +24,25 @@ const Hero = () => {
       />
 
       {/* Title */}
-      <div className="absolute top-100 md:top-90 w-full text-center text-white text-4xl md:text-5xl font-funnel font-medium">
+      <div className="absolute top-100 md:top-90 w-full text-center text-white text-4xl md:text-4xl font-funnel font-medium">
         Noctivus '25
       </div>
 
       {/* Countdown */}
-      <div className="absolute top-120 md:top-110 left-1/2 transform -translate-x-1/2">
+      <div className="absolute top-120 md:top-105 left-1/2 transform -translate-x-1/2">
         <Countdown />
       </div>
 
       {/* Register Button */}
       <button
         onClick={() => navigate("/codeofconduct")}
-        className="absolute top-150 md:top-140 left-1/2 transform -translate-x-1/2 px-6 py-3 md:py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none"
+        className="absolute top-150 md:top-130 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none"
       >
         <ShinyText
           text="REGISTER NOW"
           disabled={false}
           speed={5}
-          className="text-lg md:text-xl"
+          className="text-md md:text-lg"
         />
       </button>
     </div>

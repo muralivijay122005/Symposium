@@ -198,7 +198,7 @@ const Timeline = () => {
               return (
                 <div
                   key={i}
-                  className="absolute text-white/70 text-lg uppercase transform -translate-x-1/2"
+                  className="absolute text-white/70 text-md uppercase transform -translate-x-1/2"
                   style={{ left: `${(i / totalHalfHours) * 100}%` }}
                 >
                   {hour}:{min}

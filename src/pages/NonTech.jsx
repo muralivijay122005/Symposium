@@ -96,20 +96,20 @@ const NonTech = ({ refProp }) => {
 
   return (
     <section ref={refProp} className="px-14 md:px-20 lg:px-32 text-white pb-20">
-      <p className="text-lg font-funnel text-center pt-20 pb-10">
+      <p className="text-md font-funnel text-center pt-20 pb-10">
         NON-TECHNICAL EVENTS
       </p>
       <hr className="border-0.5 border-white/20 w-full" />
 
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 sm:gap-y-10 mt-10">
+      <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-10 mt-10">
         {events.map((event, index) => (
           <div key={index} className="w-[240px]">
             <SpotlightCard
-              className="w-full cursor-pointer transition-transform hover:scale-[1.03]"
+              className="w-50 cursor-pointer transition-transform hover:scale-[1.03]"
               spotlightColor="rgba(80, 200, 130, 0.3)"
               onClick={() => setSelectedEvent(event)}
             >
-              <div className="flex flex-col items-center gap-4 p-4">
+              <div className="flex flex-col items-center gap-4">
                 <div>{event.icon}</div>
                 <div className="text-center font-funnel">
                   <h3 className="text-md">{event.title}</h3>

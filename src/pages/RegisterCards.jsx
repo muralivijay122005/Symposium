@@ -51,8 +51,11 @@ const RegisterCards = () => {
               Register
             </button>
           </SpotlightCard>
+
+          
         ))}
       </div>
+      <p className="text-md">Note : </p>
     </section>
   );
 };
