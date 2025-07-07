@@ -17,7 +17,7 @@ const Workshop = ({ refProp }) => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Left Image */}
           <img
-            src="/images/workshop.jpg"
+            src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-122642,resizemode-75,msid-105921572/news/india/india-usa-taiwan-launch-workshop-on-cyber-security-ahead-of-polls-in-3countries-in-2024.jpg"
             alt="Workshop"
             className="w-full md:w-1/3 h-52 md:h-60 object-cover rounded-xl border border-white/20"
           />

@@ -6,27 +6,28 @@ import { LuCpu, LuBug, LuMusic2, LuFileCode2 } from "react-icons/lu";
 import { VscVr } from "react-icons/vsc";
 
 const events = [
-  {
-    title: "Null Core",
-    icon: <LuCpu className="text-blue-400 text-4xl stroke-1" />,
-    description: "A deep dive into low-level programming and system internals.",
-    date: "Aug 10, 2025",
-    venue: "CSE Lab 1",
-    schedule: "Round 1: 11:00 AM - 12:00 PM\nRound 2: 1:30 PM - 2:30 PM",
-    overview:
-      "A thrilling team-based low-level programming contest that tests understanding of memory, system calls, and coordination under pressure.",
-    format:
-      "Teams of 3 participants.\nRound 1 (Memory Maze - 30 min): Each participant writes low-level logic individually.\nRound 2 (Syscall Relay - 45 min): Participants rotate solving a chain of system-level problems.",
-    rules: [
-      "Only one participant codes at a time.",
-      "No backtracking to previous solutions.",
-      "Use of external tools or internet is prohibited.",
-      "Code must be efficient and properly commented.",
-      "Only C/C++ is allowed.",
-      "Participants must switch roles as per instruction.",
-    ],
-  },
-  {
+ {
+  title: "Null Core",
+  icon: <LuCpu className="text-blue-400 text-4xl stroke-1" />,
+  description: "A Jeopardy-style cybersecurity showdown testing your hacking skills, creativity, and problem-solving grit.",
+  date: "Aug 10, 2025",
+  venue: "CSE Lab 1",
+  schedule: "10:00 AM - 1:00 PM",
+  overview:
+    "Welcome to Null Core, a Jeopardy-style cybersecurity competition where participants solve a series of challenges designed to test their technical skills, creativity, and problem-solving abilities.",
+  format:
+    "Team Size: 2–3 members.\nNo late submissions will be accepted.",
+  rules: [
+    "No DDoS or DoS attacks.",
+    "No brute-force attacks.",
+    "No flag sharing.",
+    "No inter-team collaboration.",
+    "No tampering with infrastructure."
+  ],
+}
+
+,
+{
     title: "Glitch Ground",
     icon: <LuBug className="text-blue-400 text-4xl stroke-1" />,
     description:
@@ -46,24 +47,28 @@ const events = [
       "Plagiarism leads to disqualification.",
     ],
   },
-  {
-    title: "Beat Overflow",
-    icon: <LuMusic2 className="text-blue-400 text-4xl stroke-1" />,
-    description: "Music meets code – build, bend, and break audio with tech.",
-    date: "Aug 12, 2025",
-    venue: "Audio Lab - Block C",
-    schedule: "Round 1: 11:00 AM - 12:00 PM\nRound 2: 2:00 PM - 3:30 PM",
-    overview:
-      "Participants write creative code to manipulate audio, design effects, and compose procedural music.",
-    format:
-      "Individual or pair participation.\nRound 1: Code a functional audio tool.\nRound 2: Remix challenge using given audio samples.",
-    rules: [
-      "Only JS/Python with p5.js, Web Audio API or PyDub allowed.",
-      "Use of pre-recorded loops not permitted unless specified.",
-      "Audio must be generated or manipulated in real time.",
-      "Originality is key — no copied compositions.",
-    ],
-  },
+ {
+  title: "Beat Overflow",
+  icon: <LuMusic2 className="text-blue-400 text-4xl stroke-1" />,
+  description: "Fast-paced coding challenge – build creative digital solutions under pressure.",
+  date: "Aug 12, 2025",
+  venue: "Audio Lab - Block C",
+  schedule: "10:00 AM - 11:30 AM",
+  overview:
+    "Beat Overflow is a time-bound, creative coding event where teams develop innovative web or mobile applications based on a given problem statement. Participants are encouraged to blend logic, design, and AI tools to build impactful solutions.",
+  format:
+    "Teams of exactly 2 members from the same institution.\nProblem statement is revealed at the start.\nParticipants may build a web or mobile app using any tech stack.\nAI tools can be used as part of the development workflow.",
+  rules: [
+    "Each team must have exactly 2 members from the same institution.",
+    "All code must be written during the event — no pre-written projects.",
+    "Use of existing GitHub repositories is prohibited.",
+    "AI tools are allowed, but copy-pasting full templates or complete apps is not.",
+    "Sharing ideas between teams is not allowed.",
+    "Submissions must be completed before the deadline.",
+    "The judges’ decision is final.",
+    "Any rule violation may result in disqualification."
+  ],
+},
   {
     title: "Beyond Screen",
     icon: <VscVr className="text-blue-400 text-4xl" />,
