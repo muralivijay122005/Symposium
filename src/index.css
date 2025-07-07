@@ -41,6 +41,9 @@
 
 body {
   cursor: none;
+  background-color: #000;
+  color: white; /* optional, if you're not using Tailwind for text */
+  overscroll-behavior: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -54,4 +57,10 @@ body {
 
 .cursor-auto * {
   cursor: auto !important;
+}
+
+html{
+  background-color: #000;
+  color: white; /* optional, if you're not using Tailwind for text */
+  overscroll-behavior: none; /* optional - disables bounce scroll entirely */
 }
