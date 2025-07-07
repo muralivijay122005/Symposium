@@ -6,14 +6,7 @@ import { useNavigate } from "react-router-dom";
 const CodeOfConduct = () => {
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate(); 
-  useEffect(() => {
-  if (window.performance) {
-    const navType = window.performance.getEntriesByType("navigation")[0]?.type;
-    if (navType === "reload") {
-      window.location.replace("/"); // full reload to '/'
-    }
-  }
-}, []);
+  
   const handleAgreeChange = () => setAgreed(!agreed);
 
   const handleRegisterClick = () => {
