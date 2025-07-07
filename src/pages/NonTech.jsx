@@ -112,9 +112,9 @@ const NonTech = ({ refProp }) => {
               <div className="flex flex-col items-center gap-4 p-4">
                 <div>{event.icon}</div>
                 <div className="text-center font-funnel">
-                  <h3 className="text-xl">{event.title}</h3>
-                  <p className="text-lg text-white/60">{event.date}</p>
-                  <p className="text-lg text-white/60">{event.venue}</p>
+                  <h3 className="text-md">{event.title}</h3>
+                  <p className="text-sm text-white/60">{event.date}</p>
+                  <p className="text-sm text-white/60">{event.venue}</p>
                 </div>
               </div>
             </SpotlightCard>
