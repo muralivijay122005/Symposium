@@ -5,7 +5,6 @@ import SpotlightCard from "../components/SpotlightCard.jsx";
 import { LuCpu, LuBug, LuMusic2, LuFileCode2 } from "react-icons/lu";
 import { VscVr } from "react-icons/vsc";
 
-
 const events = [
   {
     title: "Null Core",
@@ -33,8 +32,7 @@ const events = [
   {
     title: "Glitch Ground",
     icon: <LuBug className="text-blue-400 text-4xl stroke-1" />,
-    description:
-      "Hack the glitches and master the challenges in this hacking event.",
+    description: "Hack the glitches and master the challenges in this hacking event.",
     date: "Aug 11, 2025",
     venue: "Cyber Cell - Block B",
     schedule: "10:00 AM - 11:30 AM",
@@ -140,10 +138,10 @@ const Tech = ({ refProp }) => {
 
   return (
     <section ref={refProp} className="px-14 md:px-20 lg:px-32 text-white pb-20">
-      <p className="text-md font-funnel text-center py-10">TECHNICAL EVENTS</p>
+      <p className="text-md font-funnel text-center pt-20 pb-10">TECHNICAL EVENTS</p>
       <hr className="border-0.5 border-white/20 w-full" />
 
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 sm:gap-y-10 mt-10">
+      <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-10 mt-10">
         {events.map((event, index) => (
           <div key={index} className="w-[240px]">
             <SpotlightCard
