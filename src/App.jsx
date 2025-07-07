@@ -3,6 +3,8 @@ import MainApp from "./MainApp";
 import CodeOfConduct from "./pages/CodeOfConduct";
 import CustomCursor from "./components/CustomCursor";
 import ClickSpark from "./components/ClickSpark";
+import RegisterCards from "./pages/RegisterCards"; 
+
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainApp />} />
           <Route path="/codeofconduct" element={<CodeOfConduct />} />
+          <Route path="/register" element={<RegisterCards />} />
         </Routes>
       </ClickSpark>
     </Router>

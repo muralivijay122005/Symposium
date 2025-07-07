@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import Aurora from "./../components/Aurora";
 import { IoWarningOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const CodeOfConduct = () => {
   const [agreed, setAgreed] = useState(false);
+  const navigate = useNavigate(); // ✅ Moved inside component — now it's legal
 
   const handleAgreeChange = () => setAgreed(!agreed);
 
   const handleRegisterClick = () => {
     if (agreed) {
-      window.location.href = "https://noctivus-register.vercel.app";
+      navigate("/register");
     }
   };
 
@@ -88,7 +90,7 @@ const CodeOfConduct = () => {
           </div>
 
           <div className="flex flex-row items-center gap-2">
-           <IoWarningOutline />
+            <IoWarningOutline />
             <p>
               Violations may result in warnings, disqualification, or removal from the event at the discretion of the organizers.
             </p>
