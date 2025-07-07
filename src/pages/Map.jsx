@@ -8,7 +8,7 @@ const Map = () => {
         <hr className="border-0.5 border-white/20 w-full" />
 
         <div
-          className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-2xl"
+          className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl"
           onMouseEnter={() => document.body.classList.add("cursor-auto")}
           onMouseLeave={() => document.body.classList.remove("cursor-auto")}
         >

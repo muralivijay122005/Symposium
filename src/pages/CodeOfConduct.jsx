@@ -38,7 +38,7 @@ const CodeOfConduct = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 px-8 md:px-20 lg:px-40 py-20 max-h-full overflow-y-auto">
-        <h1 className="text-lg md:text-xl text-center mb-6">CODE OF CONDUCT</h1>
+        <h1 className="text-md md:text-lg text-center mb-6">CODE OF CONDUCT</h1>
         <hr className="border-0.5 border-white/20 w-full mb-10" />
 
         <div className="space-y-10 text-white/60 leading-7 text-lg">
@@ -98,12 +98,13 @@ const CodeOfConduct = () => {
             </ul>
           </div>
 
-          <div className="flex flex-row items-center gap-2 bg-red-600 w-fit p-1 px-3 rounded-md mx-auto  justify-center">
-            <IoWarningOutline className="text-white"/>
-            <p className="text-white">
-              Violations may result in warnings, disqualification, or removal from the event at the discretion of the organizers.
-            </p>
-          </div>
+          <div className="flex flex-row items-center gap-2 bg-red-600 w-fit p-1 px-3 rounded-md mx-auto">
+  <IoWarningOutline className="text-white text-[40px] md:text-[20px]" />
+  <p className="text-white">
+    Violations may result in warnings, disqualification, or removal from the event.
+  </p>
+</div>
+
 
           {/* Signature Message */}
           <div className="text-center text-white mt-12 text-xl">
