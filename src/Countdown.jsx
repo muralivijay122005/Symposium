@@ -37,7 +37,7 @@ const Countdown = () => {
     <div className="text-white text-center font-funnel z-10 w-full flex flex-row justify-center items-center gap-x-6 sm:gap-x-10">
       {[
         { label: "Days", value: timeLeft.days },
-        { label: "Hr", value: timeLeft.hours },
+        { label: "Hrs", value: timeLeft.hours },
         { label: "Min", value: timeLeft.minutes },
         { label: "Sec", value: timeLeft.seconds },
       ].map((item, idx) => (
