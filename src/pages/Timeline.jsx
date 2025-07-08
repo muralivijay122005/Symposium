@@ -70,7 +70,7 @@ const events = [
     icon: FiMusic,
   },
   {
-    title: "Paper Presentation",
+    title: "Paper to Pixel",
     time: "10 – 11:30",
     start: 10,
     end: 11.5,
