@@ -68,11 +68,11 @@ const EventPopup = ({ event, onClose }) => {
 
             <h2 className="text-xl font-semibold">{event.title}</h2>
 
-            {event.date && (
+            {/* {
               <p className="text-md ">
-                <strong>Date:</strong> {event.date}
+                <strong>Date:</strong> Aug 02, 2025
               </p>
-            )}
+            } */}
 
             {/* {event.venue && (
               <p className="text-md">

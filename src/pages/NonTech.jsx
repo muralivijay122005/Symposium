@@ -8,7 +8,8 @@ import {
   LuTheater,
   LuTrophy,
   LuMusic2,
-  LuFileCode2
+  LuFileCode2,
+  LuLock
 } from "react-icons/lu";
 
 const events = [
@@ -29,31 +30,29 @@ const events = [
   ],
 },
 {
-  title: "Beat Overflow",
-  icon: <LuFileCode2 className="text-emerald-400 text-4xl stroke-1" />,
-  description: "AI + App Dev hack challenge with an on-spot problem statement.",
+  title: "Escape Room",
+  icon: <LuLock className="text-emerald-400 text-4xl stroke-1" />,
+  description: "Crack codes and escape the room in this high-stakes, puzzle-solving thriller.",
   date: "Aug 21, 2025",
   venue: "CSE Lab 2",
-  schedule: "10:00 AM - 11:30 AM",
+  schedule: "11:30 AM - 01:00 PM",
   overview:
-    "Teams will build mobile apps using any tech stack or AI tools, based on an on-spot topic with a focus on real-world impact.",
-  format: `Team of 2.\nOn-spot problem.\nBuild during event time only.`,
+    "Escape Room is a thrilling event where teams solve puzzles and crack codes to break out of a themed setup within a limited time. It blends storytelling, logic, and teamwork across 4 engaging rounds.",
+  format: `Team of 4 members.\n4 Rounds.\nPuzzles, codes, logic-based challenges.`,
   rules: [
-    "No use of existing GitHub repositories.",
-    "No idea sharing or pre-written projects.",
-    "AI use allowed, but full templates are not.",
-    "Submission must be within event time.",
-    "Submit: Code + Prompt Log + README.",
-    "Judges’ decision is final.",
+    "Use of mobile phones is strictly prohibited during the event.",
+    "Listen to coordinators and follow instructions carefully.",
+    "Avoid giving away clues to other teams — keep the suspense alive!",
   ],
-},
+}
+,
 {
   title: "E-Sports",
   icon: <LuGamepad2 className="text-emerald-400 text-4xl stroke-1" />,
   description: "Competitive gaming showdown — Stay tuned!",
   date: "Aug 22, 2025",
   venue: "GameZone",
-  schedule: "To Be Announced",
+  schedule: "11:30 AM - 01:00 PM",
   overview: "Get ready for the ultimate gaming battle! Event details will be revealed soon.",
   format: `Details coming soon.`,
   rules: [
