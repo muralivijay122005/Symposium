@@ -69,7 +69,7 @@ const RegisterCards = () => {
                 href={event.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 self-end px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 text-sm text-center"
+                className="mt-6 self-end px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 text-sm text-center cursor-none"
               >
                 Register
               </a>
