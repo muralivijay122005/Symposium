@@ -74,11 +74,11 @@ const EventPopup = ({ event, onClose }) => {
               </p>
             )}
 
-            {event.venue && (
+            {/* {event.venue && (
               <p className="text-md">
                 <strong>Venue:</strong> {event.venue}
               </p>
-            )}
+            )} */}
 
             {event.schedule &&
               renderTextBlock("Schedule:", event.schedule)}
