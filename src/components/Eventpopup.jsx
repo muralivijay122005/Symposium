@@ -4,17 +4,34 @@ import { motion, AnimatePresence } from "framer-motion";
 const EventPopup = ({ event, onClose }) => {
   const popupRef = useRef(null);
 
-  // Handle outside click to close
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
         onClose();
       }
     };
-
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [onClose]);
+
+  const renderTextBlock = (title, content) => (
+    <div className="space-y-1">
+      <h3 className="text-md font-medium">{title}</h3>
+      <p className="text-md text-neutral-300 whitespace-pre-line">{content}</p>
+    </div>
+  );
+
+  const renderListBlock = (title, list) =>
+    list && list.length > 0 ? (
+      <div className="">
+        <h3 className="text-md font-medium">{title}</h3>
+        <ul className="list-disc list-inside text-md text-neutral-300 space-y-1">
+          {list.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ) : null;
 
   return (
     <AnimatePresence>
@@ -22,14 +39,8 @@ const EventPopup = ({ event, onClose }) => {
         <motion.div
           key="backdrop"
           initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { duration: 0.05, ease: "easeOut" },
-          }}
-          exit={{
-            opacity: 0,
-            transition: { duration: 0.1, ease: "easeIn" },
-          }}
+          animate={{ opacity: 1, transition: { duration: 0.05 } }}
+          exit={{ opacity: 0, transition: { duration: 0.1 } }}
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center"
         >
           <motion.div
@@ -39,23 +50,15 @@ const EventPopup = ({ event, onClose }) => {
             animate={{
               scale: 1,
               opacity: 1,
-              transition: {
-                type: "spring",
-                stiffness: 220, // increased stiffness
-                damping: 20, // slightly less damping for snap
-              },
+              transition: { type: "spring", stiffness: 220, damping: 20 },
             }}
             exit={{
               scale: 0.85,
               opacity: 0,
-              transition: {
-                duration: 0.15,
-                ease: [0.4, 0, 0.2, 1],
-              },
+              transition: { duration: 0.15, ease: [0.4, 0, 0.2, 1] },
             }}
             className="bg-neutral-900 font-funnel text-white rounded-2xl p-6 w-[90%] max-w-lg relative space-y-4 max-h-[90vh] overflow-y-auto scrollbar-hide"
           >
-            {/* Close Button */}
             <button
               onClick={onClose}
               className="absolute top-4 right-5 text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full transition duration-100 hover:bg-neutral-700"
@@ -63,36 +66,33 @@ const EventPopup = ({ event, onClose }) => {
               &times;
             </button>
 
-            {/* Content */}
-            <h2 className="text-xl font-medium">{event.title}</h2>
+            <h2 className="text-xl font-semibold">{event.title}</h2>
 
-            <div>
-              <h3 className="text-lg font-medium mb-1"> Schedule:</h3>
-              <p className="text-lg whitespace-pre-line text-neutral-300">
-                {event.schedule}
+            {event.date && (
+              <p className="text-md ">
+                <strong>Date:</strong> {event.date}
               </p>
-            </div>
+            )}
 
-            <div>
-              <h3 className="text-lg font-medium mb-1"> Overview:</h3>
-              <p className="text-lg text-neutral-300">{event.overview}</p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium mb-1"> Format:</h3>
-              <p className="text-lg whitespace-pre-line text-neutral-300">
-                {event.format}
+            {event.venue && (
+              <p className="text-md">
+                <strong>Venue:</strong> {event.venue}
               </p>
-            </div>
+            )}
 
-            <div>
-              <h3 className="text-lg font-medium mb-1"> Rules:</h3>
-              <ul className="list-disc list-inside text-lg text-neutral-300">
-                {event.rules.map((rule, i) => (
-                  <li key={i}>{rule}</li>
-                ))}
-              </ul>
-            </div>
+            {event.schedule &&
+              renderTextBlock("Schedule:", event.schedule)}
+
+            {event.overview &&
+              renderTextBlock("Overview:", event.overview)}
+
+            {event.format &&
+              renderTextBlock("Format:", event.format)}
+
+            {renderListBlock("Submission Guidelines:", event.submissionGuidelines)}
+            {renderListBlock("Reporting Guidelines:", event.reporting)}
+            {renderListBlock("Rules:", event.rules)}
+            {renderListBlock("Prohibited Actions:", event.prohibited)}
           </motion.div>
         </motion.div>
       )}

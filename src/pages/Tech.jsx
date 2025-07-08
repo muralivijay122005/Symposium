@@ -16,10 +16,10 @@ const events = [
     schedule: "10:00 AM - 1:00 PM",
     overview:
       "Null Core, a Jeopardy-style Capture The Flag (CTF) competition where participants solve a series of challenges designed to test their technical skills, creativity, and problem-solving abilities.",
-    format: "Team Size: 2–3 members",
+    format: "Team Size: 1–3 members",
     rules: [
       "All captured flags must follow the format: NOCT{Y0ur_Fl@g_!s_herE}",
-      "The flag is case sensitive.",
+      "The flag is case sensitive."
     ],
     prohibited: [
       "No DDoS / DoS Attacks",
@@ -27,7 +27,7 @@ const events = [
       "No Flag Sharing",
       "No Inter-Team Collaboration",
       "No Infrastructure Tampering"
-    ],
+    ]
   },
   {
     title: "Glitch Ground",
@@ -40,8 +40,9 @@ const events = [
       "GlitchGround is a bug bounty event that simulates a real-world vulnerability disclosure program. The objective is to identify and responsibly report security vulnerabilities with clear, structured, and well-documented submissions.",
     format: "Team Size: Solo",
     reporting: [
-      "Each vulnerability must be submitted with: a clear title and description, screenshots or proof, and steps to reproduce.",
-      "Submissions must be made using the official bug report form/template.",
+      "Each vulnerability must be submitted with a clear title and description.",
+      "Include screenshots or proof and steps to reproduce.",
+      "Use the official bug report form/template.",
       "Only the first valid report of a bug will be accepted (no duplicates)."
     ],
     rules: [
@@ -52,7 +53,7 @@ const events = [
     prohibited: [
       "No Automated Scanning",
       "No DDoS / Brute Force"
-    ],
+    ]
   },
   {
     title: "Beat Overflow",
@@ -65,35 +66,32 @@ const events = [
     overview:
       "Beat Overflow is an AI coding event where teams rapidly build innovative app-based solutions using any tech stack or AI tools. Participants tackle a given problem with creativity, logic, and real-world impact.",
     format:
-      "Team Size: Exactly 2 members from the same institution\nOn-Spot Topic revealed at event start",
+      "Team Size:2 members \nOn-Spot Topic revealed at event start",
     submissionGuidelines: [
-      "Each team must submit a folder named /teamname/ with:",
-      "- Code.ext (html, js, py, etc.)",
-      "- Prompt_log.txt or screenshot",
-      "- Readme.md (prompt used + how the app works)"
+      " Each team must submit a folder named `/teamname/` with:",
+      " Code.ext (html, js, py, etc.)",
+      " Prompt_log.txt or screenshot",
+      " Readme.md (prompt used + how the app works)"
     ],
     rules: [
       "Participants must build a mobile app using any tech stack.",
       "Projects must be created during the event only.",
-      "Use of AI is allowed, but copy-pasting entire apps or templates is not.",
       "Submission must be done before the end time.",
       "No use of existing GitHub repositories.",
       "No idea sharing.",
       "No pre-written projects.",
       "The judges’ decision is final and binding.",
-      "Any rule violation may lead to immediate disqualification."
     ]
   },
   {
     title: "Beyond Screen",
     icon: <VscVr className="text-blue-400 text-4xl" />,
-    description:
-      "Augmented Reality, VR & immersive tech demos and contests.",
+    description: "Augmented Reality, VR & immersive tech demos and contests.",
     date: "Aug 13, 2025",
     venue: "XR Studio - Block A",
-    schedule: "11:00 AM - 1:00 PM",
+    schedule: "11:30 AM - 1:00 PM",
     overview:
-      "Beyond Screen is a UI/UX design event where participants craft original, user-friendly digital interfaces under time constraints, focusing on creativity, usability.",
+      "Beyond Screen is a UI/UX design event where participants craft original, user-friendly digital interfaces under time constraints, focusing on creativity and usability.",
     format: "Team Size: Solo\nOn-Spot Topic revealed during event",
     rules: [
       "Final submission must include a clear user flow and short explanation of the design thinking and decisions.",
@@ -109,8 +107,7 @@ const events = [
   {
     title: "Paper To Pixel",
     icon: <LuFileCode2 className="text-blue-400 text-4xl stroke-1" />,
-    description:
-      "Research meets reality – convert ideas into working tech.",
+    description: "Research meets reality – convert ideas into working tech.",
     date: "Aug 14, 2025",
     venue: "Seminar Hall 2",
     schedule: "10:00 AM - 11:30 AM",
@@ -153,8 +150,8 @@ const Tech = ({ refProp }) => {
                 <div>{event.icon}</div>
                 <div className="text-center font-funnel">
                   <h3 className="text-md">{event.title}</h3>
-                  <p className="text-sm text-white/60">{event.date}</p>
-                  <p className="text-sm text-white/60">{event.venue}</p>
+                  {/* <p className="text-sm text-white/60">{event.date}</p> */}
+                  {/* <p className="text-sm text-white/60">{event.venue}</p> */}
                 </div>
               </div>
             </SpotlightCard>

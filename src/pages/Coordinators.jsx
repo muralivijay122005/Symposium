@@ -48,7 +48,7 @@ const Coordinators = ({ refProp }) => {
   return (
     <section
       ref={refProp}
-      className="min-h-screen px-14 sm:px-10 md:px-16 lg:px-40 xl:px-40 text-white"
+      className="min-h-screen px-14 md:px-20 lg:px-32 text-white"
     >
       <h2 className="text-lg font-funnel text-center py-10">COORDINATORS</h2>
       <hr className="border-0.5 border-white/20 w-full mb-10" />

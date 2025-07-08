@@ -31,7 +31,7 @@ const Workshop = ({ refProp }) => {
               </div>
 
               <h3 className="text-xl sm:text-xl font-semibold text-white">
-                CyberSec Hands-On Workshop
+                 The Art of Hacking
               </h3>
             </div>
 

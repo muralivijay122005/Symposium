@@ -7,88 +7,61 @@ import {
   LuUsers,
   LuTheater,
   LuTrophy,
+  LuMusic2,
+  LuFileCode2
 } from "react-icons/lu";
 
 const events = [
   {
-    title: "LOLathon",
-    icon: <LuSmile className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Stand-up, mimicry, roast and chaos — all for laughs!",
-    date: "Aug 16, 2025",
-    venue: "Auditorium",
-    schedule: "5:00 PM - 6:30 PM",
-    overview:
-      "Show off your humor in this live stand-up comedy face-off. Make the crowd roar.",
-    format: `Solo performance.\n5 minutes per participant.\nJudged on originality, delivery, crowd response.`,
-    rules: [
-      "No vulgarity or offensive jokes.",
-      "Only original content allowed.",
-      "Going overtime deducts points.",
-    ],
-  },
-  {
-    title: "Button Bashers",
-    icon: <LuGamepad2 className="text-emerald-400 text-4xl stroke-1" />,
-    description: "FIFA, Tekken, NFS and pure button-mashing glory.",
-    date: "Aug 17, 2025",
-    venue: "Games Lounge",
-    schedule: "10:00 AM - 1:00 PM",
-    overview:
-      "Enter the gaming arena. Classic console fights with knockout rounds.",
-    format: `1v1 battles.\nKnockout format.\nWinners progress to final.`,
-    rules: [
-      "Use provided controllers only.",
-      "No pausing mid-game.",
-      "Abuse leads to disqualification.",
-    ],
-  },
-  {
-    title: "Clash of Crews",
-    icon: <LuUsers className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Group games that need coordination, not code.",
-    date: "Aug 18, 2025",
-    venue: "Main Grounds",
-    schedule: "3:00 PM - 6:00 PM",
-    overview: "Team relay games, obstacle races, and lots of outdoor fun.",
-    format: `Teams of 4–6.\nMultiple rounds.\nPoints per challenge.`,
-    rules: [
-      "Respect other teams.",
-      "Cheating = elimination.",
-      "Follow event volunteers' instructions.",
-    ],
-  },
-  {
-    title: "Drama Dhamaka",
-    icon: <LuTheater className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Stage plays, monologues, and over-the-top acting.",
-    date: "Aug 19, 2025",
-    venue: "Open Air Theatre",
-    schedule: "6:00 PM - 8:00 PM",
-    overview:
-      "Bring your dramatic flair to life on stage. Costumes allowed, overacting encouraged.",
-    format: `Solo or groups.\n5–10 minute acts.\nJudged by jury.`,
-    rules: [
-      "No political or sensitive content.",
-      "Teams must handle their own props.",
-      "Stage time must be respected.",
-    ],
-  },
-  {
-    title: "Quiz Quest",
-    icon: <LuTrophy className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Trivia marathon for the quick and curious minds.",
-    date: "Aug 20, 2025",
-    venue: "Seminar Hall 1",
-    schedule: "2:00 PM - 4:00 PM",
-    overview:
-      "A general knowledge quiz — with buzzer rounds, rapid fire, and brainy banter.",
-    format: `Teams of 2.\n3 rounds: MCQs, Picture Round, Rapid Fire.`,
-    rules: [
-      "No mobile phones.",
-      "Only one answer per team.",
-      "Quizmaster's decision is final.",
-    ],
-  },
+  title: "Tune Tracker",
+  icon: <LuMusic2 className="text-emerald-400 text-4xl stroke-1" />,
+  description: "A music-themed challenge testing memory, coordination, and speed.",
+  date: "Aug 21, 2025",
+  venue: "AV Room",
+  schedule: "10:00 AM - 11:30 AM",
+  overview:
+    "A thrilling music-based non-tech event with 3 engaging rounds: reversed BGMs, audio puzzles, and visual cues.",
+  format: `Team of 4 members.\n3 rounds: Reverse BGM, Audio Puzzle, Visual Clues.`,
+  rules: [
+    "Mobile phone use is strictly prohibited.",
+    "Report 10 minutes early.",
+    "Judges’ decisions are final."
+  ],
+},
+{
+  title: "Beat Overflow",
+  icon: <LuFileCode2 className="text-emerald-400 text-4xl stroke-1" />,
+  description: "AI + App Dev hack challenge with an on-spot problem statement.",
+  date: "Aug 21, 2025",
+  venue: "CSE Lab 2",
+  schedule: "10:00 AM - 11:30 AM",
+  overview:
+    "Teams will build mobile apps using any tech stack or AI tools, based on an on-spot topic with a focus on real-world impact.",
+  format: `Team of 2.\nOn-spot problem.\nBuild during event time only.`,
+  rules: [
+    "No use of existing GitHub repositories.",
+    "No idea sharing or pre-written projects.",
+    "AI use allowed, but full templates are not.",
+    "Submission must be within event time.",
+    "Submit: Code + Prompt Log + README.",
+    "Judges’ decision is final.",
+  ],
+},
+{
+  title: "E-Sports",
+  icon: <LuGamepad2 className="text-emerald-400 text-4xl stroke-1" />,
+  description: "Competitive gaming showdown — Stay tuned!",
+  date: "Aug 22, 2025",
+  venue: "GameZone",
+  schedule: "To Be Announced",
+  overview: "Get ready for the ultimate gaming battle! Event details will be revealed soon.",
+  format: `Details coming soon.`,
+  rules: [
+    "Bring your A-game!",
+    "Follow official game rules.",
+    "More info will be shared closer to the event."
+  ],
+},
 ];
 
 const NonTech = ({ refProp }) => {
@@ -113,8 +86,8 @@ const NonTech = ({ refProp }) => {
                 <div>{event.icon}</div>
                 <div className="text-center font-funnel">
                   <h3 className="text-md">{event.title}</h3>
-                  <p className="text-sm text-white/60">{event.date}</p>
-                  <p className="text-sm text-white/60">{event.venue}</p>
+                  {/* <p className="text-sm text-white/60">{event.date}</p> */}
+                  {/* <p className="text-sm text-white/60">{event.venue}</p> */}
                 </div>
               </div>
             </SpotlightCard>

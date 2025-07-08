@@ -98,7 +98,7 @@ const CodeOfConduct = () => {
             </ul>
           </div>
 
-          <div className="flex flex-row items-center gap-2 bg-red-600 w-fit p-1 px-3 rounded-md mx-auto">
+          <div className="flex flex-row items-center gap-2 bg-red-900 w-fit p-1 px-3 rounded-md mx-auto">
   <IoWarningOutline className="text-white text-[40px] md:text-[20px]" />
   <p className="text-white">
     Violations may result in warnings, disqualification, or removal from the event.
@@ -107,21 +107,18 @@ const CodeOfConduct = () => {
 
 
           {/* Signature Message */}
-          <div className="text-center text-white mt-12 text-xl">
-            Let’s keep Noctivus awesome. <br />
-            <span className="text-blue-400">
-              Code hard. Stay chill. Respect always.
-            </span>
+          <div className="text-center text-white mt-12 text-md">
+              Break Limits. Not Trust !
           </div>
 
           {/* Checkbox + Button */}
           <div className="mt-16 flex flex-col items-center justify-center gap-6">
-            <label className="flex items-center gap-3 text-white/80 text-lg ">
+            <label className="flex items-center gap-3 text-white/80 text-md ">
               <input
                 type="checkbox"
                 checked={agreed}
                 onChange={handleAgreeChange}
-                className="accent-blue-500 w-5 h-5 "
+                className="accent-emerald-500 w-5 h-5 "
               />
               I have read and agree to the Code of Conduct.
             </label>
@@ -129,10 +126,10 @@ const CodeOfConduct = () => {
             <button
               onClick={handleRegisterClick}
               disabled={!agreed}
-              className={`px-6 py-3 rounded-full text-white font-funnel text-lg transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-white font-funnel text-md transition-all duration-300 ${
                 agreed
-                  ? "bg-blue-600 hover:bg-blue-700 cursor-pointer"
-                  : "bg-white/10 cursor-not-allowed opacity-50"
+                  ? "bg-emerald-500 hover:bg-emerald-700 cursor-pointer"
+                  : "bg-white/30 cursor-not-allowed opacity-50"
               }`}
             >
               Register Now
