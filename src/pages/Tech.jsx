@@ -30,7 +30,7 @@ const events = [
     ]
   },
   {
-    title: "Glitch Ground",
+    title: "GlitchGround",
     icon: <LuBug className="text-blue-400 text-4xl stroke-1" />,
     description: "Hack the glitches and master the challenges in this hacking event.",
     date: "Aug 11, 2025",

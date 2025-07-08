@@ -90,6 +90,15 @@ const CodeOfConduct = () => {
           </div>
 
           <div>
+            <h2 className=" text-white mb-2">6. Dress Code</h2>
+            <ul className="list-disc ml-6 space-y-1">
+              <li>Casual dress is allowed and encouraged, provided it is appropriate and respectful in a professional academic setting.</li>
+              <li>Avoid clothing with offensive language, symbols, or graphics.</li>
+              <li>Organizers reserve the right to advise on dress if it is deemed inappropriate for the event environment.</li>
+            </ul>
+          </div>
+
+          <div>
             <h2 className="text-white mb-2">6. Photo/Media Consent</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>The event will be recorded and photographed.</li>
