@@ -8,14 +8,18 @@ const RegisterCards = () => {
     {
       name: "Capture the Flag",
       description: "Show your skills in cybersecurity and logic. Solve challenges. Get glory.",
+      link:"https://forms.gle/XkjNdYmh77vT6U9P8"
+
     },
     {
       name: "Workshop",
       description: "Level up with our hands-on tech sessions and expert-led knowledge drops.",
+      link:"https://forms.gle/x6HmJ27bLMQHcfkC9"
     },
     {
       name: "Tech & Non-Tech Events",
       description: "Whether you're coding or meme-making — we got you covered.",
+      link:"https://forms.gle/RhyVE1Sb9XncoYt96"
     },
   ];
 
@@ -61,12 +65,14 @@ const RegisterCards = () => {
                 </p>
               </div>
 
-              <button
-                className="mt-6 self-end px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 text-sm"
-                onClick={() => alert(`Registering for: ${event.name}`)}
+              <a
+                href={event.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 self-end px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 text-sm text-center"
               >
                 Register
-              </button>
+              </a>
             </SpotlightCard>
           ))}
         </div>
