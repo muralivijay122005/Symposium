@@ -26,23 +26,28 @@ const Workshop = ({ refProp }) => {
           <div className="w-full md:w-2/3 flex flex-col gap-4">
             {/* Icon + Title */}
             <div className="flex items-center gap-3 justify-center md:justify-start">
-
-
-              <h3 className="text-xl sm:text-xl flex-row  flex font-semibold items-center gap-3 text-white">
-                <div className="bg-white/20 flex items-center justify-center w-12 h-12 min-w-12 min-h-12 rounded-full overflow-hidden shrink-0">
+              <h3 className="text-xl sm:text-xl flex flex-row items-center gap-3 font-semibold text-white">
+                <div className="bg-white/20 flex items-center justify-center w-12 min-w-[3rem] aspect-square rounded-full shrink-0">
                   <VscTools className="text-white text-xl sm:text-2xl" />
-                  </div>
-                
+                </div>
                 The Art of Hacking
               </h3>
             </div>
 
+            {/* Conducted By */}
+            <p className="text-white/60 text-left text-md">
+              Conducted by: <span className="text-white">Sriram Kesavan, Founder & Director of Security at TG Cyberlabs</span>
+            </p>
+
+
             {/* Description */}
-            <p className="text-white/70 text-left md:text-md leading-relaxed ">
-              Dive deep into real-world cybersecurity techniques in this
-              hands-on workshop led by industry experts. Learn ethical hacking,
-              penetration testing, and digital forensics in an interactive
-              environment. No fluff, just real skills.
+            <p className="text-white/70 text-left text-md leading-relaxed">
+              The Art of Hacking is a hands-on workshop that dives deep into the mindset,
+              techniques, and real-world tactics used by ethical hackers. From reconnaissance
+              to exploitation, this session unveils how digital systems are probed, bypassed,
+              and broken while emphasizing responsible hacking practices to secure them.
+              Led by industry expert Sriram Kesavan, this workshop is tailored for cybersecurity
+              enthusiasts eager to learn how hackers really think and act.
             </p>
           </div>
         </div>

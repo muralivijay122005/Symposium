@@ -65,7 +65,7 @@ const events = [
     overview:
       "Beat Overflow is an AI coding event where teams rapidly build innovative app-based solutions using any tech stack or AI tools. Participants tackle a given problem with creativity, logic, and real-world impact.",
     format:
-      "Team Size:2 members \nOn-Spot Topic revealed at event start",
+      "Team Size: 2 members \nOn-Spot Topic revealed at event start",
     submissionGuidelines: [
       " Each team must submit a folder named `/teamname/` with:",
       " Code.ext (html, js, py, etc.)",

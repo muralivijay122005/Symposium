@@ -14,7 +14,7 @@ const events = [
     schedule: "10:00 AM - 11:30 AM",
     overview:
       "A thrilling music-based non-tech event with 3 engaging rounds: reversed BGMs, audio puzzles, and visual cues.",
-    format: `Team Size : 2–4 members.\n3 rounds: Reverse BGM, Audio Puzzle, Visual Clues.`,
+    format: `Team Size: 2–4 members\n3 rounds: Reverse BGM, Audio Puzzle, Visual Clues.`,
     rules: [
       "Mobile phone use is strictly prohibited.",
       "Report 10 minutes early.",
@@ -30,7 +30,7 @@ const events = [
     schedule: "11:30 AM - 01:00 PM",
     overview:
       "Escape Room is a thrilling event where teams solve puzzles and crack codes to break out of a themed setup within a limited time. It blends storytelling, logic, and teamwork across 4 engaging rounds.",
-    format: `Team Size: 2–4 members.\n4 Rounds.\nPuzzles, codes, logic-based challenges.`,
+    format: `Team Size: 2–4 members\n4 rounds including puzzles, codes, and logic-based challenges.`,
     rules: [
       "Use of mobile phones is strictly prohibited during the event.",
       "Listen to coordinators and follow instructions carefully.",
@@ -51,12 +51,21 @@ const events = [
     venue: "GameZone",
     schedule: "10:00 AM - 11:30 AM",
     overview:
-      "Drop into Bermuda and face the chaos. Tactical shooting, survival instincts, and perfect coordination will decide your fate.",
-    format: `Teams of 4.\nMobile devices only.\nClassic Squad Battle.`,
+      "This Free Fire tournament encourages fair play, teamwork, and a strong competitive spirit. All players must follow the rules and uphold the spirit of the game.",
+    format: `Team Size: 4 members\nRound 1: BR Mode – Top 2 teams move to Finals\nFinals follow same rules.`,
     rules: [
-      "Emulators strictly prohibited.",
-      "Headphones recommended.",
-      "Match rules and lobby details will be shared on spot."
+      "Each player can represent only one team — violation leads to disqualification.",
+      "Teaming with other squads is strictly prohibited.",
+      "Teams must join the custom lobby 10 minutes before the match.",
+      "Only mobile players allowed — no PC or emulator players.",
+      "Player level must be 40+ in-game.",
+      "All required maps must be downloaded in advance.",
+      "No emotes allowed during matches.",
+      "Gun attributes will be off to ensure fairness.",
+      "Abusive/spam chat leads to disqualification.",
+      "Matches won't be paused for individual issues.",
+      "No use of hacks or panels — results in instant disqualification.",
+      "Rematch only if all teams face network issues."
     ]
   },
   {
@@ -67,12 +76,16 @@ const events = [
     venue: "GameZone",
     schedule: "11:45 AM - 01:15 PM",
     overview:
-      "Bring your squad and jump into Erangel! A battle for the Chicken Dinner with strategy, precision, and plenty of pans.",
-    format: `Teams of 4.\nTPP mode.\nMultiple rounds, cumulative scoring.`,
+      "A fast-paced squad tournament promoting fair play, teamwork, and competitive spirit. Play fair, fight hard, and become the Tournament Champion!",
+    format: `Team Size: 4 players (1 optional substitute allowed)\nMode: Classic TPP - Squad\nMap: Erangel` ,
     rules: [
-      "Only mobile devices allowed.",
-      "Use of hacks or scripts will lead to disqualification.",
-      "All decisions by moderators are final."
+      "Only mobile devices allowed — no emulators.",
+      "Use of hacks, cheats, or third-party tools = disqualification.",
+      "Join the room 10 minutes before the match starts.",
+      "Only the top 4 teams advance (if single room).",
+      "If multiple rooms, top 2 from each room advance.",
+      "Top 4 teams play knockout-style TDM rounds.",
+      "Final 2 teams face off in one last TDM to determine the champion."
     ]
   }
 ];

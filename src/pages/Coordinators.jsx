@@ -37,7 +37,7 @@ const Coordinators = ({ refProp }) => {
 
       {/* Staff Coordinators */}
       <div className="space-y-6 mb-16 font-funnel">
-        <h3 className="text-lg  text-white/50 pb-2">Staff Coordinators</h3>
+        <h3 className="text-lg text-white/50 pb-2">Staff Coordinators</h3>
         <div className="grid md:grid-cols-2 gap-8">
           {coordinators.staff.map((person, index) => (
             <SpotlightCard
@@ -46,7 +46,7 @@ const Coordinators = ({ refProp }) => {
               spotlightColor="rgba(0, 150, 255, 0.3)"
             >
               <div className="flex items-center gap-6">
-                <div className="rounded-full w-16 h-16 bg-white/10 flex items-center justify-center">
+                <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
                   <FaRegUser size={24} />
                 </div>
                 <div className="text-left text-md sm:text-md">
@@ -75,7 +75,7 @@ const Coordinators = ({ refProp }) => {
                 spotlightColor="rgba(80, 200, 130, 0.3)"
               >
                 <div className="flex items-center gap-6">
-                  <div className="rounded-full w-16 h-16 bg-white/10 flex items-center justify-center">
+                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
                     <FaRegUser size={24} />
                   </div>
                   <div className="text-left text-md sm:text-md">
@@ -99,7 +99,7 @@ const Coordinators = ({ refProp }) => {
                 spotlightColor="rgba(80, 200, 130, 0.3)"
               >
                 <div className="flex items-center gap-6">
-                  <div className="rounded-full w-16 h-16 bg-white/10 flex items-center justify-center">
+                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
                     <FaRegUser size={24} />
                   </div>
                   <div className="text-left text-md sm:text-md">
@@ -123,7 +123,7 @@ const Coordinators = ({ refProp }) => {
                 spotlightColor="rgba(80, 200, 130, 0.3)"
               >
                 <div className="flex items-center gap-6">
-                  <div className="rounded-full w-16 h-16 bg-white/10 flex items-center justify-center">
+                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
                     <FaRegUser size={24} />
                   </div>
                   <div className="text-left text-md sm:text-md">
@@ -144,12 +144,12 @@ const Coordinators = ({ refProp }) => {
           {[
             {
               name: "Instagram",
-              id: "@sympo_college",
+              id: "@noctivus_25",
               icon: <FaInstagram size={24} className="text-emerald-400" />,
             },
             {
               name: "LinkedIn",
-              id: "linkedin.com/in/sympo",
+              id: "Noctivus Symposium",
               icon: <FaLinkedin size={24} className="text-emerald-400" />,
             },
             {
@@ -169,7 +169,7 @@ const Coordinators = ({ refProp }) => {
               spotlightColor="rgba(80, 200, 130, 0.4)"
             >
               <div className="flex items-center gap-6">
-                <div className="rounded-full w-16 h-16 bg-emerald-400/10 flex items-center justify-center">
+                <div className="rounded-full bg-emerald-400/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
                   {social.icon}
                 </div>
                 <div className="text-left text-md sm:text-md flex-1 min-w-0">
