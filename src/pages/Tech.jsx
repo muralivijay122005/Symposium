@@ -1,14 +1,15 @@
 import { useState } from "react";
 import EventPopup from "../components/Eventpopup.jsx";
 import SpotlightCard from "../components/SpotlightCard.jsx";
-
-import { LuCpu, LuBug, LuMusic2, LuFileCode2 } from "react-icons/lu";
-import { VscVr } from "react-icons/vsc";
+import { HiOutlineFlag } from "react-icons/hi2";
+import { LuBug, LuFileCode2 } from "react-icons/lu";
+import { PiPalette } from "react-icons/pi";
+import { VscCode } from "react-icons/vsc";
 
 const events = [
   {
     title: "Null Core",
-    icon: <LuCpu className="text-blue-400 text-4xl stroke-1" />,
+    icon: <HiOutlineFlag className="text-blue-400 text-4xl" />,
     description:
       "A Jeopardy-style cybersecurity showdown testing your hacking skills, creativity, and problem-solving grit.",
     date: "Aug 10, 2025",
@@ -57,7 +58,7 @@ const events = [
   },
   {
     title: "Beat Overflow",
-    icon: <LuMusic2 className="text-blue-400 text-4xl stroke-1" />,
+    icon: <VscCode className="text-blue-400 text-4xl" />,
     description:
       "Fast-paced coding challenge – build creative digital solutions under pressure.",
     date: "Aug 12, 2025",
@@ -85,7 +86,7 @@ const events = [
   },
   {
     title: "Beyond Screen",
-    icon: <VscVr className="text-blue-400 text-4xl" />,
+    icon: <PiPalette className="text-blue-400 text-4xl" />,
     description: "Augmented Reality, VR & immersive tech demos and contests.",
     date: "Aug 13, 2025",
     venue: "XR Studio - Block A",
@@ -143,7 +144,7 @@ const Tech = ({ refProp }) => {
           <div key={index} className="w-[240px]">
             <SpotlightCard
               className="w-50 cursor-pointer transition-transform hover:scale-[1.03]"
-              spotlightColor="rgba(0, 150, 255, 0.3)"
+              spotlightColor="rgba(0, 150, 255, 0.4)"
               onClick={() => setSelectedEvent(event)}
             >
               <div className="flex flex-col items-center gap-4">
