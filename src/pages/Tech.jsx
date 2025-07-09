@@ -10,8 +10,7 @@ const events = [
   {
     title: "Null Core",
     icon: <HiOutlineFlag className="text-blue-400 text-4xl" />,
-    description:
-      "A Jeopardy-style cybersecurity showdown testing your hacking skills, creativity, and problem-solving grit.",
+    description: "Capture the Flag",
     date: "Aug 10, 2025",
     venue: "CSE Lab 1",
     schedule: "10:00 AM - 1:00 PM",
@@ -33,7 +32,7 @@ const events = [
   {
     title: "GlitchGround",
     icon: <LuBug className="text-blue-400 text-4xl stroke-1" />,
-    description: "Hack the glitches and master the challenges in this hacking event.",
+    description: "Bug Bounty",
     date: "Aug 11, 2025",
     venue: "Cyber Cell - Block B",
     schedule: "10:00 AM - 11:30 AM",
@@ -59,8 +58,7 @@ const events = [
   {
     title: "Beat Overflow",
     icon: <VscCode className="text-blue-400 text-4xl" />,
-    description:
-      "Fast-paced coding challenge – build creative digital solutions under pressure.",
+    description: "Vibe Coding",
     date: "Aug 12, 2025",
     venue: "Audio Lab - Block C",
     schedule: "10:00 AM - 11:30 AM",
@@ -87,7 +85,7 @@ const events = [
   {
     title: "Beyond Screen",
     icon: <PiPalette className="text-blue-400 text-4xl" />,
-    description: "Augmented Reality, VR & immersive tech demos and contests.",
+    description: "UI/UX",
     date: "Aug 13, 2025",
     venue: "XR Studio - Block A",
     schedule: "11:30 AM - 1:00 PM",
@@ -108,7 +106,7 @@ const events = [
   {
     title: "Paper To Pixel",
     icon: <LuFileCode2 className="text-blue-400 text-4xl stroke-1" />,
-    description: "Research meets reality – convert ideas into working tech.",
+    description: "Paper Presentation",
     date: "Aug 14, 2025",
     venue: "Seminar Hall 2",
     schedule: "10:00 AM - 11:30 AM",
@@ -139,23 +137,21 @@ const Tech = ({ refProp }) => {
       <p className="text-md font-funnel text-center pt-20 pb-10">TECHNICAL EVENTS</p>
       <hr className="border-0.5 border-white/20 w-full" />
 
-      <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-10 mt-10">
+      <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-y-10 mt-10">
         {events.map((event, index) => (
-          <div key={index} className="w-[240px]">
+          <div key={index} className="w-[200px] h-[180px] font-funnel">
             <SpotlightCard
-              className="w-50 cursor-pointer transition-transform hover:scale-[1.03]"
-              spotlightColor="rgba(0, 150, 255, 0.4)"
-              onClick={() => setSelectedEvent(event)}
-            >
-              <div className="flex flex-col items-center gap-4">
-                <div>{event.icon}</div>
-                <div className="text-center font-funnel">
-                  <h3 className="text-md">{event.title}</h3>
-                  {/* <p className="text-sm text-white/60">{event.date}</p> */}
-                  {/* <p className="text-sm text-white/60">{event.venue}</p> */}
-                </div>
-              </div>
-            </SpotlightCard>
+  className="w-full h-full cursor-pointer transition-transform hover:scale-[1.03]"
+  spotlightColor="rgba(0, 150, 255, 0.4)"
+  onClick={() => setSelectedEvent(event)}
+>
+  <div className="flex flex-col items-center justify-center text-center gap-1 h-full px-1.5 py-2">
+    <div>{event.icon}</div>
+    <h3 className="text-md font-funnel">{event.title}</h3>
+    <p className="text-sm text-white/70">{event.description}</p>
+  </div>
+</SpotlightCard>
+
           </div>
         ))}
       </div>

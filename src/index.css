@@ -64,3 +64,6 @@ html{
   color: white; /* optional, if you're not using Tailwind for text */
   overscroll-behavior: none; /* optional - disables bounce scroll entirely */
 }
+*{
+  cursor:none;
+}

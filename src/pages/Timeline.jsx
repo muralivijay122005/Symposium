@@ -45,7 +45,7 @@ const events = [
   icon: FiCpu,
 },
 {
-  title: "Null core",
+  title: "Null Core",
   time: "10 – 1",
   start: 10,
   end: 13,
@@ -163,7 +163,7 @@ const Timeline = () => {
       <hr className="border-0.5 border-white/20 w-full mb-6" />
 
       <div className="w-full overflow-x-auto">
-        <div className="rounded-lg border border-white/20 bg-white/5 p-6 min-w-[820px]">
+        <div className="rounded-lg border border-white/20 bg-white/5 p-6 min-w-[1080px]">
           {/* Time Labels */}
           <div className="relative w-full mb-6" style={{ height: "40px" }}>
             {[...Array(totalHalfHours)].map((_, i) => {
