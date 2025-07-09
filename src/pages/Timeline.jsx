@@ -169,9 +169,11 @@ const Timeline = () => {
             {[...Array(totalHalfHours)].map((_, i) => {
   const current = startHour + i * 0.5;
   if (current === endHour) return null;
-  const hour = Math.floor(current);
+  const hour24 = Math.floor(current);
   const min = current % 1 === 0 ? "00" : "30";
-  if (hour === 8 && min === "00") return null;
+  if (hour24 === 8 && min === "00") return null;
+
+  const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
 
   return (
     <div
@@ -179,7 +181,7 @@ const Timeline = () => {
       className="absolute text-white/70 text-md uppercase transform -translate-x-1/2"
       style={{ left: `${(i / totalHalfHours) * 100}%` }}
     >
-      {hour}:{min}
+      {hour12}:{min}
     </div>
   );
 })}
