@@ -8,18 +8,17 @@ const RegisterCards = () => {
     {
       name: "Capture the Flag",
       description: "Show your skills in cybersecurity and logic. Solve challenges. Get glory.",
-      link:"https://forms.gle/XkjNdYmh77vT6U9P8"
-
+      link: "https://forms.gle/XkjNdYmh77vT6U9P8"
     },
     {
       name: "Workshop",
       description: "Level up with our hands-on tech sessions and expert-led knowledge drops.",
-      link:"https://forms.gle/x6HmJ27bLMQHcfkC9"
+      link: "https://forms.gle/x6HmJ27bLMQHcfkC9"
     },
     {
       name: "Tech & Non-Tech Events",
       description: "Whether you're coding or meme-making — we got you covered.",
-      link:"https://forms.gle/RhyVE1Sb9XncoYt96"
+      link: "https://forms.gle/RhyVE1Sb9XncoYt96"
     },
   ];
 
@@ -77,22 +76,16 @@ const RegisterCards = () => {
           ))}
         </div>
 
-        {/* Note Section */}
+        {/* Rules Section */}
         <div className="text-white/80 text-sm mt-12 max-w-2xl space-y-4 leading-relaxed">
           <p className="text-white text-base font-semibold text-left mb-2">Note:</p>
           <ul className="list-decimal list-inside space-y-2 pl-2">
-            <li>
-              Participants can register for only <strong>one</strong> of the three core technical events if they choose to participate in the <strong>Capture the Flag (CTF)</strong>.
-            </li>
-            <li>
-              If not attending the CTF, participants may register for <strong>any two</strong> of the remaining technical events (subject to schedule availability).
-            </li>
-            <li>
-              Registration must be done individually. For events that allow team participation, teams can be formed <strong>at the venue</strong> on the day of the event.
-            </li>
-            <li>
-              Participants who register for the <strong>Workshop</strong> will not be eligible to participate in any other event, due to scheduling conflicts.
-            </li>
+            <li>Participants can register for only one event from the above list.</li>
+            <li>If not attending the CTF, participants may register for any two of the remaining technical events.</li>
+            <li>Registration must be done individually. For events that allow team participation, participants can form teams at the venue on the day of the event.</li>
+            <li>Participants who register for the workshop will not be eligible to participate in any other event.</li>
+            <li>Food will be provided for all registered participants, with both Veg and Non-Veg options available.</li>
+            <li>All tech events participants should bring their own devices.</li>
           </ul>
         </div>
       </section>
