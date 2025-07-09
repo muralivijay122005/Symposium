@@ -1,4 +1,4 @@
-import ScrollReveal from "./../components/ScrollReveal";
+
 import "aos/dist/aos.css";
 
 const About = ({ refProp }) => {

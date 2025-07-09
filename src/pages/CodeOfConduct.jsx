@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Aurora from "./../components/Aurora";
 import { IoWarningOutline, IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -7,14 +7,7 @@ const CodeOfConduct = () => {
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (window.performance) {
-      const navType = window.performance.getEntriesByType("navigation")[0]?.type;
-      if (navType === "reload") {
-        window.location.replace("/");
-      }
-    }
-  }, []);
+  
 
   const handleAgreeChange = () => setAgreed(!agreed);
   const handleRegisterClick = () => {

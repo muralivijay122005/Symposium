@@ -8,7 +8,7 @@ import NonTech from "./pages/NonTech";
 import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import Coordinators from "./pages/Coordinators";
-import Sponsor from "./pages/Sponsor";
+import Brochure from "./pages/Brochure";
 
 const MainApp = () => {
   const aboutRef = useRef(null);
@@ -25,7 +25,7 @@ const MainApp = () => {
       <NonTech refProp={ntechRef} />
       <Workshop refProp={workshopRef} />
       <Timeline />
-      <Sponsor/>
+      <Brochure/>
       <Coordinators refProp={contactRef} />
       <Map />
       <Navbar
