@@ -57,9 +57,9 @@ const CodeOfConduct = () => {
           </ul>
 
           {/* Warning */}
-          <div className="flex flex-col md:flex-row items-center gap-2 bg-red-900 w-fit p-1 px-2 mt-10 rounded-md mx-auto text-white text-sm md:text-base text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center gap-2 bg-red-900 w-fit py-3 lg:py-1 px-2 mt-10 md:mt-20 rounded-md mx-auto text-white text-sm md:text-base text-center md:text-left">
   <IoWarningOutline className="text-[20px] md:text-[20px]" />
-  <p className="text-md">
+  <p className="text-[16px]">
     Violations may result in warnings, disqualification, or removal from the event.
   </p>
 </div>
@@ -72,15 +72,16 @@ const CodeOfConduct = () => {
 
           {/* Checkbox + Button */}
           <div className="my-10 flex flex-col items-center justify-center gap-6">
-            <label className="flex items-center gap-3 text-white/80 text-md">
-              <input
-                type="checkbox"
-                checked={agreed}
-                onChange={handleAgreeChange}
-                className="accent-emerald-500 w-5 h-5"
-              />
-              I have read and agree to fully comply with the Code of Conduct.
-            </label>
+            <label className="flex items-start gap-3 text-white/80 text-md text-left leading-snug max-w-xs sm:max-w-none">
+  <input
+    type="checkbox"
+    checked={agreed}
+    onChange={handleAgreeChange}
+    className="accent-emerald-500 w-6 h-6 lg:h-5 lg:w-5 mt-[2px]"
+  />
+  <span>I have read and agree to fully comply with the Code of Conduct.</span>
+</label>
+
 
             <button
               onClick={handleRegisterClick}

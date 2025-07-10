@@ -13,7 +13,7 @@ export default function BusRouteDropdown() {
     <div className="min-h-screen bg-black text-white px-4 py-6">
       {/* Title */}
       <div className="text-center relative">
-        <h1 className="text-md font-funnel mb-2">BUS ROUTES</h1>
+        <h1 className="text-lg font-funnel mb-2">BUS ROUTES</h1>
 
         {/* Download Button (top right corner, slightly below title) */}
         <div className="absolute right-1 transform -translate-y-1/2">

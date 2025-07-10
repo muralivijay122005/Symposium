@@ -6,12 +6,12 @@ const coordinators = {
   staff: [
     {
       name: "Ms. Akshaya Dharani K",
-      phone: "+91 98849 47054",
+      email: "admin@noctivus.pro",
       designation: "Asst. Professor, Dept of CSE (CS)",
     },
     {
       name: "Mrs. Parveenbanu M",
-      phone: "+91 72004 67850",
+      email: "support@noctivus.pro",
       designation: "Asst. Professor, Dept of CSE (CS)",
     },
   ],
@@ -51,7 +51,7 @@ const Coordinators = ({ refProp }) => {
                 </div>
                 <div className="text-left text-md sm:text-md">
                   <h3 className="text-white">{person.name}</h3>
-                  <p className="text-white/60">{person.phone}</p>
+                  <p className="text-white/60">{person.email}</p>
                   <p className="text-white/60">{person.designation}</p>
                 </div>
               </div>
