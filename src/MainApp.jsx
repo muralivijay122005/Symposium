@@ -9,7 +9,7 @@ import Workshop from "./pages/Workshop";
 import Map from "./pages/Map";
 import Coordinators from "./pages/Coordinators";
 import Brochure from "./pages/Brochure";
-
+import BusRoutes from "./pages/BusRoutes"
 const MainApp = () => {
   const aboutRef = useRef(null);
   const techRef = useRef(null);
@@ -27,6 +27,7 @@ const MainApp = () => {
       <Timeline />
       <Brochure/>
       <Coordinators refProp={contactRef} />
+      <BusRoutes/>
       <Map />
       <Navbar
         scrollToAbout={() =>
