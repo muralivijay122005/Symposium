@@ -74,7 +74,7 @@ const events = [
     description: "Erangel Echoes",
     date: "Aug 22, 2025",
     venue: "GameZone",
-    schedule: "11:45 AM - 01:15 PM",
+    schedule: "11:30 AM - 01:00 PM",
     overview:
       "A fast-paced squad tournament promoting fair play, teamwork, and competitive spirit. Play fair, fight hard, and become the Tournament Champion!",
     format: `Team Size: 4 players (1 optional substitute allowed)\nMode: Classic TPP - Squad\nMap: Erangel` ,
