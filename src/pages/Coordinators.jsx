@@ -17,7 +17,7 @@ const coordinators = {
   ],
   students: [
     { name: "Abilash B", phone: "+91 72004 67850" },
-    { name: "Kartheek Kareti", phone: "+91 93456 78901" },
+    { name: "Kartheek Kareti", phone: "+91 94455 27120" },
     { name: "Roshath S", phone: "+91 81228 65936" },
     { name: "Adarsh A G", phone: "+91 98849 47054" },
     { name: "Balakumaran", phone: "+91 76958 27158" },
@@ -31,7 +31,7 @@ const Coordinators = ({ refProp }) => {
   const registration = coordinators.students.slice(4, 6);
 
   return (
-    <section ref={refProp} className="min-h-screen px-14 md:px-20 lg:px-32 text-white">
+    <section ref={refProp} className="min-h-screen px-10 md:px-20 lg:px-32 text-white">
       <h2 className="text-lg font-funnel text-center py-10">COORDINATORS</h2>
       <hr className="border-0.5 border-white/20 w-full mb-10" />
 
@@ -138,51 +138,63 @@ const Coordinators = ({ refProp }) => {
       </div>
 
       {/* Social Media Cards */}
-      <div className="space-y-4 mt-16 font-funnel">
-        <h4 className="text-md text-white flex justify-center">Social Media</h4>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {[
-            {
-              name: "Instagram",
-              id: "@noctivus_25",
-              icon: <FaInstagram size={24} className="text-emerald-400" />,
-            },
-            {
-              name: "LinkedIn",
-              id: "Noctivus Symposium",
-              icon: <FaLinkedin size={24} className="text-emerald-400" />,
-            },
-            {
-              name: "X (Twitter)",
-              id: "@sympo_x",
-              icon: <FaXTwitter size={24} className="text-emerald-400" />,
-            },
-            {
-              name: "Discord",
-              id: "discord.gg/sympo",
-              icon: <FaDiscord size={24} className="text-emerald-400" />,
-            },
-          ].map((social, index) => (
-            <SpotlightCard
-              key={index}
-              className="custom-spotlight-card"
-              spotlightColor="rgba(80, 200, 130, 0.4)"
-            >
-              <div className="flex items-center gap-6">
-                <div className="rounded-full bg-emerald-400/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-                  {social.icon}
-                </div>
-                <div className="text-left text-md sm:text-md flex-1 min-w-0">
-                  <h3 className="text-white">{social.name}</h3>
-                  <p className="text-white/60 truncate max-w-[200px]" title={social.id}>
-                    {social.id}
-                  </p>
-                </div>
-              </div>
-            </SpotlightCard>
-          ))}
-        </div>
-      </div>
+<div className="space-y-4 mt-16 font-funnel">
+  <h4 className="text-md text-white flex justify-center">Social Media</h4>
+  <div className="grid sm:grid-cols-2 gap-6">
+    {[
+      {
+        name: "Instagram",
+        id: "@noctivus_25",
+        icon: <FaInstagram size={24} className="text-emerald-400" />,
+        link: "https://www.instagram.com/noctivus_25",
+      },
+      {
+        name: "LinkedIn",
+        id: "Noctivus Symposium",
+        icon: <FaLinkedin size={24} className="text-emerald-400" />,
+        link: "https://www.linkedin.com/company/noctivus-symposium/",
+      },
+      {
+        name: "X (Twitter)",
+        id: "@NoctivusSympo",
+        icon: <FaXTwitter size={24} className="text-emerald-400" />,
+        link: "https://x.com/noctivussympo",
+      },
+      {
+        name: "Discord",
+        id: "discord.gg/QJj4qAKJ",
+        icon: <FaDiscord size={24} className="text-emerald-400" />,
+        link: "https://discord.com/invite/QJj4qAKJ",
+      },
+    ].map((social, index) => (
+      <a
+        key={index}
+        href={social.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <SpotlightCard
+          className="custom-spotlight-card"
+          spotlightColor="rgba(80, 200, 130, 0.4)"
+        >
+          <div className="flex items-center gap-6">
+            <div className="rounded-full bg-emerald-400/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
+              {social.icon}
+            </div>
+            <div className="text-left text-md sm:text-md flex-1 min-w-0">
+              <h3 className="text-white">{social.name}</h3>
+              <p className="text-white/60 truncate max-w-[200px]" title={social.id}>
+                {social.id}
+              </p>
+            </div>
+          </div>
+        </SpotlightCard>
+      </a>
+    ))}
+  </div>
+</div>
+
     </section>
   );
 };

@@ -37,22 +37,21 @@ const events = [
     icon: FiUser,
   },
   {
-  title: " The Art of Hacking (Workshop)",
-  time: "10 – 1",
-  start: 10,
-  end: 13,
-  color: "purple",
-  icon: FiCpu,
-},
-{
-  title: "Null Core",
-  time: "10 – 1",
-  start: 10,
-  end: 13,
-  color: "blue",
-  icon: FiShield,
-},
-
+    title: "The Art of Hacking (Workshop)",
+    time: "10 – 1",
+    start: 10,
+    end: 13,
+    color: "purple",
+    icon: FiCpu,
+  },
+  {
+    title: "Null Core",
+    time: "10 – 1",
+    start: 10,
+    end: 13,
+    color: "blue",
+    icon: FiShield,
+  },
   {
     title: "GlitchGround",
     time: "10 – 11:30",
@@ -136,7 +135,7 @@ const events = [
 ];
 
 const startHour = 8;
-const endHour = 15.5; // up to 3:30 PM only
+const endHour = 15.5; // 3:30 PM
 const totalHalfHours = (endHour - startHour) * 2;
 const rowHeight = 60;
 
@@ -158,34 +157,29 @@ const Timeline = () => {
   const containerHeight = maxRows * rowHeight;
 
   return (
-    <section className="px-14 sm:px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
+    <section className="px-10 sm:px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
       <h2 className="text-center text-md mb-6 pt-20">EVENT TIMELINE</h2>
       <hr className="border-0.5 border-white/20 w-full mb-6" />
 
       <div className="w-full overflow-x-auto">
-        <div className="rounded-lg border border-white/20 bg-white/5 p-6 min-w-[1080px]">
+        <div className="rounded-lg border border-white/20 bg-white/5 p-6 px-12 min-w-[1280px]">
           {/* Time Labels */}
           <div className="relative w-full mb-6" style={{ height: "40px" }}>
-            {[...Array(totalHalfHours)].map((_, i) => {
-  const current = startHour + i * 0.5;
-  if (current === endHour) return null;
-  const hour24 = Math.floor(current);
-  const min = current % 1 === 0 ? "00" : "30";
-  if (hour24 === 8 && min === "00") return null;
-
-  const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
-
-  return (
-    <div
-      key={i}
-      className="absolute text-white/70 text-md uppercase transform -translate-x-1/2"
-      style={{ left: `${(i / totalHalfHours) * 100}%` }}
-    >
-      {hour12}:{min}
-    </div>
-  );
-})}
-
+            {[...Array(totalHalfHours + 1)].map((_, i) => {
+              const current = startHour + i * 0.5;
+              const hour24 = Math.floor(current);
+              const min = current % 1 === 0 ? "00" : "30";
+              const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
+              return (
+                <div
+                  key={i}
+                  className="absolute text-white/70 text-sm uppercase transform -translate-x-1/2"
+                  style={{ left: `${(i / totalHalfHours) * 100}%` }}
+                >
+                  {hour12}:{min}
+                </div>
+              );
+            })}
           </div>
 
           {/* Timeline Grid */}

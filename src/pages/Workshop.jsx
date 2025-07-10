@@ -5,7 +5,7 @@ const Workshop = ({ refProp }) => {
   return (
     <section
       ref={refProp}
-      className="px-14 sm:px-10 md:px-20 lg:px-32 font-funnel text-white"
+      className="px-10 sm:px-10 md:px-20 lg:px-32 font-funnel text-white"
     >
       <h2 className="text-lg text-center pt-10 mb-10">WORKSHOP</h2>
       <hr className="border-0.5 border-white/20 w-full mb-10" />

@@ -94,7 +94,7 @@ const NonTech = ({ refProp }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   return (
-    <section ref={refProp} className="px-14 md:px-20 lg:px-32 text-white pb-20">
+    <section ref={refProp} className="px-10 md:px-20 lg:px-32 text-white pb-20">
       <p className="text-md font-funnel text-center pt-20 pb-10">NON-TECHNICAL EVENTS</p>
       <hr className="border-0.5 border-white/20 w-full" />
 
