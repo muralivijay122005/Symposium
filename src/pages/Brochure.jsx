@@ -26,7 +26,7 @@ const Brochure = () => {
         <a
           href="/Noctivus25.pdf"
           download="Noctivus25.pdf"
-          className="mt-4 inline-flex items-center gap-2 px-5 py-2 bg-white/5 hover:bg-white/20  border-1 border-white/20 text-white/70 rounded-xl text-md font-medium transition-all duration-300"
+          className="mt-4 inline-flex items-center gap-2 px-5 py-2 bg-white/5 hover:bg-white/20  border-1 border-white/20 text-white/70 rounded-xl text-lg font-medium transition-all duration-300"
         >
           <FiDownload size={18} className='text-emerald-400' />
           DOWNLOAD BROCHURE
