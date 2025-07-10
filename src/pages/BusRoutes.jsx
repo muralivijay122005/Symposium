@@ -260,18 +260,65 @@ const busRoutes = {
     ]
 };
 
-export default function BusRoute() {
-  const [openRoute, setOpenRoute] = useState("");
+// Suggestion logic
+const getSuggestions = (query, busRoutes) => {
+  if (!query.trim()) return [];
 
-  const toggleRoute = (route) => {
-    setOpenRoute(openRoute === route ? "" : route);
+  const lowerQuery = query.toLowerCase();
+  const suggestions = new Set();
+
+  Object.entries(busRoutes).forEach(([routeName, stops]) => {
+    if (routeName.toLowerCase().includes(lowerQuery)) {
+      suggestions.add(routeName);
+    }
+    stops.forEach(({ stop }) => {
+      if (stop.toLowerCase().includes(lowerQuery)) {
+        suggestions.add(stop);
+      }
+    });
+  });
+
+  return Array.from(suggestions).slice(0, 5); // limit to 5
+};
+
+export default function BusRoute() {
+  const [inputQuery, setInputQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedRoute, setSelectedRoute] = useState("None");
+
+  const routeOptions = ["None", "All", ...Object.keys(busRoutes)];
+  const isFiltering = selectedRoute !== "None" || searchQuery.trim() !== "";
+
+  const handleSearch = () => {
+    setSearchQuery(inputQuery.trim());
   };
+
+  const handleSuggestionClick = (suggestion) => {
+    setInputQuery(suggestion);
+    setSearchQuery(suggestion); // Trigger search immediately
+  };
+
+  const filteredRoutes = Object.entries(busRoutes).filter(
+    ([routeName, stops]) => {
+      const isRouteMatch =
+        selectedRoute === "All" || selectedRoute === routeName;
+
+      const isStopMatch =
+        searchQuery === "" ||
+        routeName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        stops.some(({ stop }) =>
+          stop.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+      return isFiltering && isRouteMatch && isStopMatch;
+    }
+  );
 
   return (
     <div className="min-h-screen bg-[#121212] text-white px-6 py-10 font-sans">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-2">Velammal Bus Routes</h1>
           <p className="text-gray-400 text-lg">Academic Year 2024–25</p>
           <a
@@ -283,43 +330,98 @@ export default function BusRoute() {
           </a>
         </div>
 
-        {/* Routes */}
-        <div className="space-y-4">
-          {Object.entries(busRoutes).map(([routeName, stops]) => (
-            <div
-              key={routeName}
-              className="border border-gray-700 rounded-md bg-[#1e1e1e]"
-            >
-              <button
-                onClick={() => toggleRoute(routeName)}
-                className="w-full text-left p-4 flex justify-between items-center hover:bg-[#2a2a2a] transition"
-              >
-                <span className="text-xl font-medium">{routeName}</span>
-                <span className="text-gray-400 text-lg">
-                  {openRoute === routeName ? "▲" : "▼"}
-                </span>
-              </button>
+        {/* Filters */}
+        <div className="flex flex-col md:flex-row gap-4 mb-10 relative z-10">
+          {/* Search Input + Suggestions */}
+          <div className="relative w-full md:flex-1">
+            <input
+              type="text"
+              placeholder="Search stop or route..."
+              value={inputQuery}
+              onChange={(e) => setInputQuery(e.target.value)}
+              className="w-full px-4 py-3 rounded-md bg-[#1e1e1e] text-white border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {inputQuery.trim() && (
+              <ul className="absolute z-20 w-full mt-1 bg-[#1e1e1e] border border-gray-700 rounded-md max-h-48 overflow-y-auto shadow-lg">
+                {getSuggestions(inputQuery, busRoutes).map(
+                  (suggestion, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="px-4 py-2 cursor-pointer hover:bg-[#2a2a2a] text-gray-200"
+                    >
+                      {suggestion}
+                    </li>
+                  )
+                )}
+              </ul>
+            )}
+          </div>
 
-              {openRoute === routeName && (
-                <div className="p-4 border-t border-gray-700 bg-[#1a1a1a]">
-                  <ul className="space-y-3 text-gray-200">
-                    {stops.map(({ stop, time }, index) => (
+          {/* Route Dropdown */}
+          <select
+            value={selectedRoute}
+            onChange={(e) => setSelectedRoute(e.target.value)}
+            className="px-4 py-3 rounded-md bg-[#1e1e1e] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            {routeOptions.map((route) => (
+              <option key={route} value={route}>
+                {route === "None" ? "Select Route" : route}
+              </option>
+            ))}
+          </select>
+
+          {/* Search Button */}
+          <button
+            onClick={handleSearch}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md transition text-lg"
+          >
+            Search
+          </button>
+        </div>
+
+        {/* Results */}
+        {!isFiltering ? (
+          <p className="text-center text-gray-500">
+            Use the search or select a route to begin.
+          </p>
+        ) : filteredRoutes.length === 0 ? (
+          <p className="text-center text-gray-500">
+            No matching routes or stops.
+          </p>
+        ) : (
+          <div className="space-y-8">
+            {filteredRoutes.map(([routeName, stops]) => (
+              <div
+                key={routeName}
+                className="bg-[#1e1e1e] rounded-md p-5 border border-gray-700"
+              >
+                <h2 className="text-2xl font-semibold mb-4 text-indigo-400">
+                  {routeName}
+                </h2>
+                <ul className="space-y-2 text-gray-200">
+                  {stops
+                    .filter(({ stop }) =>
+                      stop.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                    .map(({ stop, time }, index) => (
                       <li
                         key={index}
                         className="flex justify-between border-b border-gray-700 pb-2"
                       >
                         <span className="text-lg">{stop}</span>
                         {time && (
-                          <span className="text-base text-gray-400">{time}</span>
+                          <span className="text-base text-gray-400">
+                            {time}
+                          </span>
                         )}
                       </li>
                     ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
