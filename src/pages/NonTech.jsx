@@ -8,34 +8,38 @@ const events = [
   {
     title: "Tune Tracker",
     icon: <LuMusic2 className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Guess the Beats",
+    description: "Guess The Beats",
     date: "Aug 21, 2025",
     venue: "AV Room",
     schedule: "10:00 AM - 11:30 AM",
+    teamSize: "2 to 4 Members",
     overview:
-      "A thrilling music-based non-tech event with 3 engaging rounds: reversed BGMs, audio puzzles, and visual cues.",
-    format: `Team Size: 2–4 members\n3 rounds: Reverse BGM, Audio Puzzle, Visual Clues.`,
+      "A thrilling music-based non-tech event with three engaging rounds: reversed BGMs, audio puzzles, and visual clues to challenge your senses.",
     rules: [
-      "Mobile phone use is strictly prohibited.",
-      "Report 10 minutes early.",
-      "Judges’ decisions are final."
-    ]
+      "The event includes three rounds: Reverse BGM, Audio Puzzle, Visual Clues",
+      "Mobile phone use is strictly prohibited during the event",
+      "Participants must report to the venue 10 minutes early",
+      "No external help or team switching is allowed",
+      "Judges’ decisions are final and binding",
+    ],
   },
   {
     title: "Escape Room",
     icon: <LuLock className="text-emerald-400 text-4xl stroke-1" />,
-    description: "Crack the Code",
+    description: "Crack The Code",
     date: "Aug 21, 2025",
     venue: "CSE Lab 2",
-    schedule: "11:30 AM - 01:00 PM",
+    schedule: "11:30 AM - 1:00 PM",
+    teamSize: "2 to 4 Members",
     overview:
-      "Escape Room is a thrilling event where teams solve puzzles and crack codes to break out of a themed setup within a limited time. It blends storytelling, logic, and teamwork across 4 engaging rounds.",
-    format: `Team Size: 2–4 members\n4 rounds including puzzles, codes, and logic-based challenges.`,
+      "A fast-paced logic-based challenge where teams solve puzzles, crack codes, and use teamwork to break out of the room. Let your brain do the talking.",
     rules: [
-      "Use of mobile phones is strictly prohibited during the event.",
-      "Listen to coordinators and follow instructions carefully.",
-      "Avoid giving away clues to other teams — keep the suspense alive!"
-    ]
+      "The event includes four rounds featuring puzzles, codes, and logic-based challenges",
+      "Mobile phone use is strictly prohibited throughout the event",
+      "Follow coordinator instructions carefully to avoid disqualification",
+      "Do not reveal answers or clues to other teams — keep it competitive",
+      "Maintain discipline and enthusiasm throughout",
+    ],
   },
   {
     title: "Free Fire",
@@ -49,24 +53,24 @@ const events = [
     description: "Booyah Awaits",
     date: "Aug 22, 2025",
     venue: "GameZone",
-    schedule: "11:30 AM - 01:00 PM",
+    schedule: "11:30 AM - 1:00 PM",
+    teamSize: "4 Members",
     overview:
-      "This Free Fire tournament encourages fair play, teamwork, and a strong competitive spirit. All players must follow the rules and uphold the spirit of the game.",
-    format: `Team Size: 4 members\nRound 1: BR Mode – Top 2 teams move to Finals\nFinals follow same rules.`,
+      "Gear up for an adrenaline-pumping Free Fire tournament that demands tactical skill, fast reflexes, and pure squad synergy.",
     rules: [
-      "Each player can represent only one team — violation leads to disqualification.",
-      "Teaming with other squads is strictly prohibited.",
-      "Teams must join the custom lobby 10 minutes before the match.",
-      "Only mobile players allowed — no PC or emulator players.",
-      "Player level must be 40+ in-game.",
-      "All required maps must be downloaded in advance.",
-      "No emotes allowed during matches.",
-      "Gun attributes will be off to ensure fairness.",
-      "Abusive/spam chat leads to disqualification.",
-      "Matches won't be paused for individual issues.",
-      "No use of hacks or panels — results in instant disqualification.",
-      "Rematch only if all teams face network issues."
-    ]
+      "Each player can play for only one team — breaking this rule leads to disqualification",
+      "No teaming with other squads",
+      "Join the lobby 10 minutes early — late entry is not allowed",
+      "Mobile players only — no PC or emulator users",
+      "Player level must be 40+ in-game",
+      "Download all required maps before the match",
+      "No emotes during gameplay",
+      "Gun attributes must be turned off for fairness",
+      "Abusive or spam chat leads to instant disqualification",
+      "No pauses for individual issues",
+      "No hacks or panels — immediate disqualification",
+      "Rematch only if all teams face network issues",
+    ],
   },
   {
     title: "BGMI",
@@ -74,20 +78,20 @@ const events = [
     description: "Erangel Echoes",
     date: "Aug 22, 2025",
     venue: "GameZone",
-    schedule: "11:30 AM - 01:00 PM",
+    schedule: "11:30 AM - 1:00 PM",
+    teamSize: "4 Members",
     overview:
-      "A fast-paced squad tournament promoting fair play, teamwork, and competitive spirit. Play fair, fight hard, and become the Tournament Champion!",
-    format: `Team Size: 4 players (1 optional substitute allowed)\nMode: Classic TPP - Squad\nMap: Erangel` ,
+      "Drop into the battleground for an intense BGMI squad showdown, where only the sharpest team will survive and claim the winner’s tag.",
     rules: [
-      "Only mobile devices allowed — no emulators.",
-      "Use of hacks, cheats, or third-party tools = disqualification.",
-      "Join the room 10 minutes before the match starts.",
-      "Only the top 4 teams advance (if single room).",
-      "If multiple rooms, top 2 from each room advance.",
-      "Top 4 teams play knockout-style TDM rounds.",
-      "Final 2 teams face off in one last TDM to determine the champion."
-    ]
-  }
+      "Mobile devices only — no emulators allowed",
+      "Hacks, cheats, or third-party tools will result in instant disqualification",
+      "Join the custom room 10 minutes early — late entries are not accepted",
+      "If a single room: top 4 teams advance",
+      "If multiple rooms: top 2 teams from each room move forward",
+      "Top 4 teams enter knockout TDM rounds",
+      "Final 2 teams battle in the last TDM to crown the champion",
+    ],
+  },
 ];
 
 const NonTech = ({ refProp }) => {
@@ -95,7 +99,9 @@ const NonTech = ({ refProp }) => {
 
   return (
     <section ref={refProp} className="px-10 md:px-20 lg:px-32 text-white pb-20">
-      <p className="text-md font-funnel text-center pt-20 pb-10">NON-TECHNICAL EVENTS</p>
+      <p className="text-md font-funnel text-center pt-20 pb-10">
+        NON-TECHNICAL EVENTS
+      </p>
       <hr className="border-0.5 border-white/20 w-full" />
 
       <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-y-10 mt-10">
@@ -116,7 +122,10 @@ const NonTech = ({ refProp }) => {
         ))}
       </div>
 
-      <EventPopup event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+      <EventPopup
+        event={selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+      />
     </section>
   );
 };
