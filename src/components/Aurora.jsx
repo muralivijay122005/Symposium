@@ -110,20 +110,25 @@ export default function Aurora(props) {
 
     let program;
 
-    function resize() {
-      if (!ctn) return;
+    const resize = () => {
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
       renderer.setSize(width, height);
-      if (program) {
+      if (program && program.uniforms?.uResolution) {
         program.uniforms.uResolution.value = [width, height];
       }
-    }
+    };
 
-    window.addEventListener("resize", resize);
+    const debounce = (fn, delay = 150) => {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+      };
+    };
 
     const geometry = new Triangle(gl);
-    if (geometry.attributes.uv) {
+    if (geometry.attributes && geometry.attributes.uv) {
       delete geometry.attributes.uv;
     }
 
@@ -147,19 +152,18 @@ export default function Aurora(props) {
     const mesh = new Mesh(gl, { geometry, program });
     ctn.appendChild(gl.canvas);
 
-    let animateId = 0;
+    let animateId = null;
+    let startTime = performance.now();
 
     const update = (t) => {
       animateId = requestAnimationFrame(update);
-      const {
-        time = t * 0.01,
-        speed = 1.0,
-        amplitude,
-        blend,
-        colorStops,
-      } = propsRef.current;
 
-      program.uniforms.uTime.value = time * speed * 0.1;
+      if (document.hidden) return; // Pause when tab is not visible
+
+      const elapsed = (t - startTime) * 0.001;
+      const { speed = 1.0, amplitude, blend, colorStops } = propsRef.current;
+
+      program.uniforms.uTime.value = elapsed * speed;
       program.uniforms.uAmplitude.value = amplitude ?? 1.0;
       program.uniforms.uBlend.value = blend ?? 0.5;
 
@@ -174,19 +178,18 @@ export default function Aurora(props) {
     };
 
     animateId = requestAnimationFrame(update);
-
     resize();
+
+    const handleResize = debounce(resize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animateId);
-      window.removeEventListener("resize", resize);
-      if (ctn && gl.canvas.parentNode === ctn) {
-        ctn.removeChild(gl.canvas);
-      }
+      window.removeEventListener("resize", handleResize);
+      if (ctn.contains(gl.canvas)) ctn.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [amplitude]);
+  }, []);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }
