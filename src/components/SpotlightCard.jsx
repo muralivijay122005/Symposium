@@ -4,7 +4,8 @@ const SpotlightCard = ({
   children,
   className = "",
   spotlightColor = "rgba(0, 229, 255, 0.2)",
-  onClick, // 🚨 IMPORTANT: Accept onClick
+  onClick,
+  padding = "p-5",
 }) => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -20,7 +21,7 @@ const SpotlightCard = ({
   return (
     <div
       ref={divRef}
-      onClick={onClick} // ✅ This line makes the card clickable
+      onClick={onClick}
       onMouseMove={handleMouseMove}
       onFocus={() => {
         setIsFocused(true);
@@ -32,7 +33,7 @@ const SpotlightCard = ({
       }}
       onMouseEnter={() => setOpacity(0.6)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative rounded-3xl border border-white/10 bg-white/5 overflow-hidden p-8 ${className}`}
+      className={`relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden ${padding} ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"

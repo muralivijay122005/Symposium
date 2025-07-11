@@ -7,7 +7,7 @@ const Workshop = ({ refProp }) => {
       ref={refProp}
       className="px-10 sm:px-10 md:px-20 lg:px-32 font-funnel text-white"
     >
-      <h2 className="text-lg text-center pt-10 mb-10">WORKSHOP</h2>
+      <p className="text-md font-funnel text-center pt-20 pb-10">WORKSHOP</p>
       <hr className="border-0.5 border-white/20 w-full mb-10" />
 
       {/* Workshop 1 - Image Left */}
@@ -34,11 +34,15 @@ const Workshop = ({ refProp }) => {
               </h3>
             </div>
             <p className="text-white/60 text-left text-md">
-              Conducted by: <span className="text-white">Sriram Kesavan, Founder & Director of Security at TG Cyberlabs</span>
+              Conducted by:{" "}
+              <span className="text-white">
+                Sriram Kesavan, Founder & Director of Security at TG Cyberlabs
+              </span>
             </p>
             <p className="text-white/70 text-left text-md leading-relaxed">
-              The Art of Hacking is a hands-on workshop that dives deep into the mindset,
-              techniques, and real-world tactics used by ethical hackers...
+              The Art of Hacking is a hands-on workshop that dives deep into the
+              mindset, techniques, and real-world tactics used by ethical
+              hackers...
             </p>
           </div>
         </div>
@@ -68,12 +72,16 @@ const Workshop = ({ refProp }) => {
               </h3>
             </div>
             <p className="text-white/60 text-left text-md">
-              Conducted by: <span className="text-white">Sneha Varadhan, Lead Security Engineer at SecureX</span>
+              Conducted by:{" "}
+              <span className="text-white">
+                Sneha Varadhan, Lead Security Engineer at SecureX
+              </span>
             </p>
             <p className="text-white/70 text-left text-md leading-relaxed">
-              This session focuses on securing web apps from modern-day threats such as XSS,
-              CSRF, SSRF, and injection attacks. Participants will engage in practical vulnerability assessments
-              and mitigation strategies.
+              This session focuses on securing web apps from modern-day threats
+              such as XSS, CSRF, SSRF, and injection attacks. Participants will
+              engage in practical vulnerability assessments and mitigation
+              strategies.
             </p>
           </div>
         </div>

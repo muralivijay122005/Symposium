@@ -1,14 +1,15 @@
+"use client";
 import React from "react";
 
 const Map = () => {
   return (
-    <div className="flex flex-col items-center px-10 md:px-20 lg:px-32 py-16 w-full">
-      <div className="w-full  font-funnel text-blue-50 text-2xl flex flex-col items-center overflow-hidden gap-10">
-        <p className="text-center text-lg">FIND US</p>
-        <hr className="border-0.5 border-white/20 w-full" />
+    <section className="px-10 sm:px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
+      <p className="text-md font-funnel text-center pt-20 pb-10">FIND US</p>
+      <hr className="border-0.5 border-white/20 w-full mb-6" />
 
+      <div className="w-full overflow-hidden rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm">
         <div
-          className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl"
+          className="w-full h-[300px] md:h-[400px]"
           onMouseEnter={() => document.body.classList.add("cursor-auto")}
           onMouseLeave={() => document.body.classList.remove("cursor-auto")}
         >
@@ -24,7 +25,7 @@ const Map = () => {
           ></iframe>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

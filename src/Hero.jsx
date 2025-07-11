@@ -7,7 +7,7 @@ const Hero = () => {
   const navigate = useNavigate(); // React Router hook
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+    <div className="relative w-full select-none h-screen bg-black overflow-hidden">
       {/* Aurora background */}
       <Aurora
         colorStops={["#3A29FF", "#00FFFF"]}

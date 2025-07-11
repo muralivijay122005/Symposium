@@ -1,6 +1,11 @@
 import SpotlightCard from "../components/SpotlightCard";
 import { FaRegUser } from "react-icons/fa";
-import { FaInstagram, FaLinkedin, FaDiscord, FaXTwitter } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaDiscord,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const coordinators = {
   staff: [
@@ -31,14 +36,21 @@ const Coordinators = ({ refProp }) => {
   const registration = coordinators.students.slice(4, 6);
 
   return (
-    <section ref={refProp} className="min-h-screen px-10 md:px-20 lg:px-32 text-white">
-      <h2 className="text-lg font-funnel text-center py-10">COORDINATORS</h2>
-      <hr className="border-0.5 border-white/20 w-full mb-10" />
+    <section
+      ref={refProp}
+      className="min-h-screen px-6 md:px-20 lg:px-32 text-white py-10 space-y-12"
+    >
+      <div>
+        <p className="text-md font-funnel text-center pt-20 pb-10">
+          COORDINATORS
+        </p>
+        <hr className="border-0.5 border-white/20 w-full mb-6" />
+      </div>
 
       {/* Staff Coordinators */}
-      <div className="space-y-6 mb-16 font-funnel">
-        <h3 className="text-lg text-white/50 pb-2">Staff Coordinators</h3>
-        <div className="grid md:grid-cols-2 gap-8">
+      <div className="space-y-4 font-funnel">
+        <h3 className="text-md text-white/50">Staff Coordinators</h3>
+        <div className="grid md:grid-cols-2 gap-6">
           {coordinators.staff.map((person, index) => (
             <SpotlightCard
               key={index}
@@ -46,10 +58,10 @@ const Coordinators = ({ refProp }) => {
               spotlightColor="rgba(0, 150, 255, 0.3)"
             >
               <div className="flex items-center gap-6">
-                <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-                  <FaRegUser size={24} />
+                <div className="rounded-full bg-white/10 flex items-center justify-center ms-2 w-14 min-w-[3.5rem] aspect-square">
+                  <FaRegUser size={20} />
                 </div>
-                <div className="text-left text-md sm:text-md">
+                <div className="text-left text-md">
                   <h3 className="text-white">{person.name}</h3>
                   <p className="text-white/60">{person.email}</p>
                   <p className="text-white/60">{person.designation}</p>
@@ -61,140 +73,100 @@ const Coordinators = ({ refProp }) => {
       </div>
 
       {/* Student Coordinators */}
-      <div className="space-y-10 font-funnel">
-        <h3 className="text-lg text-white/50 pb-2">Student Coordinators</h3>
+      <div className="space-y-6 font-funnel">
+        <h3 className="text-md text-white/50">Student Coordinators</h3>
 
-        {/* Tech Coordinators */}
-        <div className="space-y-4">
-          <h4 className="text-md text-white flex justify-center">Tech</h4>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {tech.map((person, index) => (
-              <SpotlightCard
-                key={index}
-                className="custom-spotlight-card"
-                spotlightColor="rgba(80, 200, 130, 0.3)"
-              >
-                <div className="flex items-center gap-6">
-                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-                    <FaRegUser size={24} />
+        {/* Grouped Helper */}
+        {[
+          { title: "Tech", people: tech },
+          { title: "Non-Tech", people: nonTech },
+          { title: "Registration", people: registration },
+        ].map(({ title, people }, idx) => (
+          <div key={idx} className="space-y-2">
+            <h4 className="text-md text-white mb-4 text-center">{title}</h4>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {people.map((person, i) => (
+                <SpotlightCard
+                  key={i}
+                  className="custom-spotlight-card"
+                  spotlightColor="rgba(80, 200, 130, 0.3)"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="rounded-full bg-white/10 flex items-center justify-center w-10 ms-2 min-w-[3.5rem] aspect-square">
+                      <FaRegUser size={18} />
+                    </div>
+                    <div className="text-left text-md">
+                      <h3 className="text-white">{person.name}</h3>
+                      <p className="text-white/60">{person.phone}</p>
+                    </div>
                   </div>
-                  <div className="text-left text-md sm:text-md">
-                    <h3 className="text-white">{person.name}</h3>
-                    <p className="text-white/60">{person.phone}</p>
-                  </div>
-                </div>
-              </SpotlightCard>
-            ))}
+                </SpotlightCard>
+              ))}
+            </div>
           </div>
-        </div>
-
-        {/* Non-Tech Coordinators */}
-        <div className="space-y-4">
-          <h4 className="text-md text-white flex justify-center">Non-Tech</h4>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {nonTech.map((person, index) => (
-              <SpotlightCard
-                key={index}
-                className="custom-spotlight-card"
-                spotlightColor="rgba(80, 200, 130, 0.3)"
-              >
-                <div className="flex items-center gap-6">
-                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-                    <FaRegUser size={24} />
-                  </div>
-                  <div className="text-left text-md sm:text-md">
-                    <h3 className="text-white">{person.name}</h3>
-                    <p className="text-white/60">{person.phone}</p>
-                  </div>
-                </div>
-              </SpotlightCard>
-            ))}
-          </div>
-        </div>
-
-        {/* Registration Coordinators */}
-        <div className="space-y-4">
-          <h4 className="text-md text-white flex justify-center">Registration</h4>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {registration.map((person, index) => (
-              <SpotlightCard
-                key={index}
-                className="custom-spotlight-card"
-                spotlightColor="rgba(80, 200, 130, 0.3)"
-              >
-                <div className="flex items-center gap-6">
-                  <div className="rounded-full bg-white/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-                    <FaRegUser size={24} />
-                  </div>
-                  <div className="text-left text-md sm:text-md">
-                    <h3 className="text-white">{person.name}</h3>
-                    <p className="text-white/60">{person.phone}</p>
-                  </div>
-                </div>
-              </SpotlightCard>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Social Media Cards */}
-<div className="space-y-4 mt-16 font-funnel">
-  <h4 className="text-md text-white flex justify-center">Social Media</h4>
-  <div className="grid sm:grid-cols-2 gap-6">
-    {[
-      {
-        name: "Instagram",
-        id: "@noctivus_25",
-        icon: <FaInstagram size={24} className="text-emerald-400" />,
-        link: "https://www.instagram.com/noctivus_25",
-      },
-      {
-        name: "LinkedIn",
-        id: "Noctivus Symposium",
-        icon: <FaLinkedin size={24} className="text-emerald-400" />,
-        link: "https://www.linkedin.com/company/noctivus-symposium/",
-      },
-      {
-        name: "X (Twitter)",
-        id: "@NoctivusSympo",
-        icon: <FaXTwitter size={24} className="text-emerald-400" />,
-        link: "https://x.com/noctivussympo",
-      },
-      {
-        name: "Discord",
-        id: "discord.gg/QJj4qAKJ",
-        icon: <FaDiscord size={24} className="text-emerald-400" />,
-        link: "https://discord.com/invite/QJj4qAKJ",
-      },
-    ].map((social, index) => (
-      <a
-        key={index}
-        href={social.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="rgba(80, 200, 130, 0.4)"
-        >
-          <div className="flex items-center gap-6">
-            <div className="rounded-full bg-emerald-400/10 flex items-center justify-center w-16 min-w-[4rem] aspect-square shrink-0">
-              {social.icon}
-            </div>
-            <div className="text-left text-md sm:text-md flex-1 min-w-0">
-              <h3 className="text-white">{social.name}</h3>
-              <p className="text-white/60 truncate max-w-[200px]" title={social.id}>
-                {social.id}
-              </p>
-            </div>
-          </div>
-        </SpotlightCard>
-      </a>
-    ))}
-  </div>
-</div>
-
+      <div className="space-y-4 font-funnel">
+        <h4 className="text-md text-white text-center">Social Media</h4>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {[
+            {
+              name: "Instagram",
+              id: "@noctivus_25",
+              icon: <FaInstagram size={20} className="text-emerald-400" />,
+              link: "https://www.instagram.com/noctivus_25",
+            },
+            {
+              name: "LinkedIn",
+              id: "Noctivus Symposium",
+              icon: <FaLinkedin size={20} className="text-emerald-400" />,
+              link: "https://www.linkedin.com/company/noctivus-symposium/",
+            },
+            {
+              name: "X (Twitter)",
+              id: "@NoctivusSympo",
+              icon: <FaXTwitter size={20} className="text-emerald-400" />,
+              link: "https://x.com/noctivussympo",
+            },
+            {
+              name: "Discord",
+              id: "discord.gg/QJj4qAKJ",
+              icon: <FaDiscord size={20} className="text-emerald-400" />,
+              link: "https://discord.com/invite/QJj4qAKJ",
+            },
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <SpotlightCard
+                className="custom-spotlight-card"
+                spotlightColor="rgba(80, 200, 130, 0.4)"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="rounded-full bg-emerald-400/10 flex items-center justify-center w-10 ms-2 min-w-[3.5rem] aspect-square">
+                    {social.icon}
+                  </div>
+                  <div className="text-left text-md flex-1 min-w-0">
+                    <h3 className="text-white">{social.name}</h3>
+                    <p
+                      className="text-white/60 truncate max-w-[200px]"
+                      title={social.id}
+                    >
+                      {social.id}
+                    </p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

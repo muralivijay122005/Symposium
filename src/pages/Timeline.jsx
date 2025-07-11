@@ -15,16 +15,56 @@ import {
 
 const styleMap = {
   red: { bg: "bg-red-400/15", border: "border-red-500", icon: "text-red-500" },
-  blue: { bg: "bg-blue-400/15", border: "border-blue-500", icon: "text-blue-500" },
-  purple: { bg: "bg-purple-400/15", border: "border-purple-500", icon: "text-purple-500" },
-  yellow: { bg: "bg-yellow-400/15", border: "border-yellow-500", icon: "text-yellow-500" },
-  pink: { bg: "bg-pink-400/15", border: "border-pink-500", icon: "text-pink-500" },
-  green: { bg: "bg-green-400/15", border: "border-green-500", icon: "text-green-500" },
-  indigo: { bg: "bg-indigo-400/15", border: "border-indigo-500", icon: "text-indigo-500" },
-  orange: { bg: "bg-orange-400/15", border: "border-orange-500", icon: "text-orange-500" },
-  cyan: { bg: "bg-cyan-400/15", border: "border-cyan-300", icon: "text-cyan-300" },
-  teal: { bg: "bg-teal-400/15", border: "border-teal-500", icon: "text-teal-500" },
-  amber: { bg: "bg-amber-400/15", border: "border-amber-500", icon: "text-amber-500" },
+  blue: {
+    bg: "bg-blue-400/15",
+    border: "border-blue-500",
+    icon: "text-blue-500",
+  },
+  purple: {
+    bg: "bg-purple-400/15",
+    border: "border-purple-500",
+    icon: "text-purple-500",
+  },
+  yellow: {
+    bg: "bg-yellow-400/15",
+    border: "border-yellow-500",
+    icon: "text-yellow-500",
+  },
+  pink: {
+    bg: "bg-pink-400/15",
+    border: "border-pink-500",
+    icon: "text-pink-500",
+  },
+  green: {
+    bg: "bg-green-400/15",
+    border: "border-green-500",
+    icon: "text-green-500",
+  },
+  indigo: {
+    bg: "bg-indigo-400/15",
+    border: "border-indigo-500",
+    icon: "text-indigo-500",
+  },
+  orange: {
+    bg: "bg-orange-400/15",
+    border: "border-orange-500",
+    icon: "text-orange-500",
+  },
+  cyan: {
+    bg: "bg-cyan-400/15",
+    border: "border-cyan-300",
+    icon: "text-cyan-300",
+  },
+  teal: {
+    bg: "bg-teal-400/15",
+    border: "border-teal-500",
+    icon: "text-teal-500",
+  },
+  amber: {
+    bg: "bg-amber-400/15",
+    border: "border-amber-500",
+    icon: "text-amber-500",
+  },
 };
 
 const events = [
@@ -157,8 +197,10 @@ const Timeline = () => {
   const containerHeight = maxRows * rowHeight;
 
   return (
-    <section className="px-10 sm:px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
-      <h2 className="text-center text-md mb-6 pt-20">EVENT TIMELINE</h2>
+    <section className="px-10 md:px-20 lg:px-32 font-funnel text-white w-full">
+      <p className="text-md font-funnel text-center pt-20 pb-10">
+        EVENT TIMELINE
+      </p>
       <hr className="border-0.5 border-white/20 w-full mb-6" />
 
       <div className="w-full overflow-x-auto">
@@ -183,7 +225,10 @@ const Timeline = () => {
           </div>
 
           {/* Timeline Grid */}
-          <div className="relative w-full" style={{ height: `${containerHeight}px` }}>
+          <div
+            className="relative w-full"
+            style={{ height: `${containerHeight}px` }}
+          >
             {/* Grid Lines */}
             <div
               className="absolute top-0 left-0 w-full h-full grid pointer-events-none z-0"

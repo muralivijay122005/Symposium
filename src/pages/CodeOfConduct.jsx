@@ -13,7 +13,7 @@ const CodeOfConduct = () => {
   };
 
   return (
-    <section className="relative w-full h-screen bg-black text-white font-funnel">
+    <section className="relative w-full h-screen bg-black text-white font-funnel ">
       {/* Aurora Background (behind everything, including fixed header) */}
       <div className="absolute inset-0 z-0">
         <Aurora
@@ -25,7 +25,7 @@ const CodeOfConduct = () => {
       </div>
 
       {/* Fixed Header */}
-      <div className="fixed top-0 left-0 w-full z-20 px-10 md:px-20 lg:px-40 pt-20 pb-4 backdrop-blur-xl">
+      <div className="fixed top-0 left-0 w-full z-20 px-10 md:px-20 lg:px-40 pt-20 pb-4 backdrop-blur-xl ">
         <h1 className="text-md md:text-lg text-center mb-6">CODE OF CONDUCT</h1>
         <hr className="border-0.5 border-white/20 w-full" />
       </div>
@@ -39,31 +39,40 @@ const CodeOfConduct = () => {
       </button>
 
       {/* Scrollable Content BELOW fixed header */}
-      <div className="relative z-10 px-10 md:px-20 lg:px-40 pt-[160px] pb-20 h-full overflow-y-auto">
+      <div className="relative z-10 px-10 md:px-20 lg:px-40 pt-[160px] pb-20 h-full scrollbar-hide overflow-y-auto">
         <div className="space-y-10 text-white/60 leading-7 text-md">
           <ul className="list-disc ml-6 mt-6 space-y-6">
             <li>
-              <strong>Dress Code:</strong> Participants must wear appropriate formal or semi-formal attire during the event. Only casual or formal shirts are permitted; T-shirts, graphic tops, or hoodies are strictly not allowed.
+              <strong>Dress Code:</strong> Participants must wear appropriate
+              formal or semi-formal attire during the event. Only casual or
+              formal shirts are permitted; T-shirts, graphic tops, or hoodies
+              are strictly not allowed.
             </li>
             <li>
-              <strong>Photography:</strong> Photography and videography are permitted only for personal use and must be limited to yourself or individuals you personally know.
+              <strong>Photography:</strong> Photography and videography are
+              permitted only for personal use and must be limited to yourself or
+              individuals you personally know.
             </li>
             <li>
-              <strong>ID Requirement:</strong> All attendees must carry their official college identification card and be prepared to present it upon request.
+              <strong>ID Requirement:</strong> All attendees must carry their
+              official college identification card and be prepared to present it
+              upon request.
             </li>
             <li>
-              <strong>Conduct:</strong> All participants must conduct themselves with utmost professionalism. Harassment or disruption will lead to disciplinary action.
+              <strong>Conduct:</strong> All participants must conduct themselves
+              with utmost professionalism. Harassment or disruption will lead to
+              disciplinary action.
             </li>
           </ul>
 
           {/* Warning */}
           <div className="flex flex-col md:flex-row items-center gap-2 bg-red-900 w-fit py-3 lg:py-1 px-2 mt-10 md:mt-20 rounded-md mx-auto text-white text-sm md:text-base text-center md:text-left">
-  <IoWarningOutline className="text-[20px] md:text-[20px]" />
-  <p className="text-[16px]">
-    Violations may result in warnings, disqualification, or removal from the event.
-  </p>
-</div>
-
+            <IoWarningOutline className="text-[20px] md:text-[20px]" />
+            <p className="text-[16px]">
+              Violations may result in warnings, disqualification, or removal
+              from the event.
+            </p>
+          </div>
 
           {/* Signature */}
           <div className="text-center text-white mt-10 text-md">
@@ -73,15 +82,16 @@ const CodeOfConduct = () => {
           {/* Checkbox + Button */}
           <div className="my-10 flex flex-col items-center justify-center gap-6">
             <label className="flex items-start gap-3 text-white/80 text-md text-left leading-snug max-w-xs sm:max-w-none">
-  <input
-    type="checkbox"
-    checked={agreed}
-    onChange={handleAgreeChange}
-    className="accent-emerald-500 w-6 h-6 lg:h-5 lg:w-5 mt-[2px]"
-  />
-  <span>I have read and agree to fully comply with the Code of Conduct.</span>
-</label>
-
+              <input
+                type="checkbox"
+                checked={agreed}
+                onChange={handleAgreeChange}
+                className="accent-emerald-500 w-6 h-6 lg:h-5 lg:w-5 mt-[2px]"
+              />
+              <span>
+                I have read and agree to fully comply with the Code of Conduct.
+              </span>
+            </label>
 
             <button
               onClick={handleRegisterClick}
