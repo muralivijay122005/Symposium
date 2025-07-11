@@ -3,7 +3,6 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-  AnimatePresence,
 } from "framer-motion";
 import {
   Children,
@@ -27,20 +26,32 @@ function DockItem({
   const ref = useRef(null);
   const isHovered = useMotionValue(0);
 
-  const mouseDistance = useTransform(mouseX, (val) => {
-    const rect = ref.current?.getBoundingClientRect() ?? {
-      x: 0,
-      width: baseItemSize,
-    };
-    return val - rect.x - baseItemSize / 2;
-  });
+  const [cachedX, setCachedX] = useState(Infinity);
+  const [size, setSize] = useState(baseItemSize);
 
-  const targetSize = useTransform(
-    mouseDistance,
-    [-distance, 0, distance],
-    [baseItemSize, magnification, baseItemSize]
-  );
-  const size = useSpring(targetSize, spring);
+  useEffect(() => {
+    const updateSize = () => {
+      const rect = ref.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      const center = rect.x + rect.width / 2;
+      const dist = Math.abs(cachedX - center);
+      const limitedDist = Math.min(dist, distance);
+      const scale =
+        1 +
+        ((magnification - baseItemSize) / baseItemSize) *
+          (1 - limitedDist / distance);
+      setSize(baseItemSize * scale);
+    };
+
+    const id = requestAnimationFrame(updateSize);
+    return () => cancelAnimationFrame(id);
+  }, [cachedX, baseItemSize, magnification, distance]);
+
+  useEffect(() => {
+    const unsub = mouseX.on("change", setCachedX);
+    return () => unsub();
+  }, [mouseX]);
 
   return (
     <motion.div
@@ -54,7 +65,7 @@ function DockItem({
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-full border-white/20 backdrop-blur-md border-2 shadow-md ${className}`}
+      className={`relative inline-flex items-center justify-center rounded-full border-white/20 backdrop-blur-md border-2 shadow-md transition-all duration-100 ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -64,8 +75,7 @@ function DockItem({
   );
 }
 
-function DockLabel({ children, className = "", ...rest }) {
-  const { isHovered } = rest;
+function DockLabel({ children, className = "", isHovered }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -76,21 +86,16 @@ function DockLabel({ children, className = "", ...rest }) {
   }, [isHovered]);
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -10 }}
-          exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className={`absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-white/20 backdrop-blur-md px-2 py-0.5 text-sm font-funnel text-white ${className}`}
-          role="tooltip"
-          style={{ x: "-50%" }}
-        >
-          {children}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <motion.div
+      initial={false}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? -10 : 0 }}
+      transition={{ duration: 0.2 }}
+      className={`absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-white/20 backdrop-blur-md px-2 py-0.5 text-sm font-funnel text-white ${className}`}
+      role="tooltip"
+      style={{ x: "-50%", pointerEvents: "none", position: "absolute" }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -157,7 +162,9 @@ export default function Dock({
             <DockIcon className="backdrop-blur-lg bg-black/30 rounded-full text-white">
               {item.icon}
             </DockIcon>
-            <DockLabel className="bg-black">{item.label}</DockLabel>
+            <DockLabel className="bg-black" isHovered={useMotionValue(0)}>
+              {item.label}
+            </DockLabel>
           </DockItem>
         ))}
       </motion.div>
