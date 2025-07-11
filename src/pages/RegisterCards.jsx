@@ -1,9 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import SpotlightCard from "../components/SpotlightCard";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { IoArrowBackOutline } from "react-icons/io5";
-import Aurora from "../components/Aurora";
 import { useNavigate } from "react-router-dom";
+
+const Aurora = lazy(() => import("../components/Aurora"));
 
 const RegisterCards = () => {
   const navigate = useNavigate();
@@ -11,31 +12,33 @@ const RegisterCards = () => {
   const events = [
     {
       name: "Capture the Flag",
-      description: "Test your cybersecurity skills with logic-based challenges.",
-      link: "https://forms.gle/XkjNdYmh77vT6U9P8"
+      description:
+        "Test your cybersecurity skills with logic-based challenges.",
+      link: "https://forms.gle/XkjNdYmh77vT6U9P8",
     },
     {
       name: "Workshop",
       description: "Boost your tech skills with expert-led sessions.",
-      link: "https://forms.gle/x6HmJ27bLMQHcfkC9"
+      link: "https://forms.gle/x6HmJ27bLMQHcfkC9",
     },
     {
       name: "Tech & Non-Tech Events",
       description: "From coding to meme-making — there’s something for all.",
-      link: "https://forms.gle/RhyVE1Sb9XncoYt96"
+      link: "https://forms.gle/RhyVE1Sb9XncoYt96",
     },
   ];
 
   return (
     <div className="relative min-h-screen w-full bg-black text-white font-funnel overflow-hidden">
-      {/* Aurora Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Aurora
-          colorStops={["#3A29FF", "#00FFFF"]}
-          blend={20}
-          amplitude={2}
-          speed={0.7}
-        />
+        <Suspense fallback={null}>
+          <Aurora
+            colorStops={["#3A29FF", "#00FFFF"]}
+            blend={20}
+            amplitude={2}
+            speed={0.7}
+          />
+        </Suspense>
       </div>
 
       {/* Gradient Top */}
@@ -47,7 +50,7 @@ const RegisterCards = () => {
           console.log("Back clicked");
           navigate("/");
         }}
-        className="absolute top-10 left-10 z-50 fixed pointer-events-auto flex items-center gap-2 p-3 rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition-all duration-300"
+        className="top-10 left-10 z-50 fixed pointer-events-auto flex items-center gap-2 p-3 rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition-all duration-300"
       >
         <IoArrowBackOutline className="text-lg" />
       </button>
@@ -93,14 +96,34 @@ const RegisterCards = () => {
 
         {/* Rules Section */}
         <div className="text-white/80 text-base md:text-lg mt-12 max-w-2xl space-y-4 leading-relaxed">
-          <p className="text-white text-lg font-semibold text-left mb-2">Note:</p>
+          <p className="text-white text-lg font-semibold text-left mb-2">
+            Note:
+          </p>
           <ul className="list-decimal list-inside space-y-3 pl-2">
-            <li>All tech event participants must bring their own devices to ensure smooth and uninterrupted participation.</li>
-            <li>Participants can register for only one event from the above list.</li>
-            <li>If not attending the CTF, participants may register for any two of the remaining technical events.</li>
-            <li>Registration must be done individually. For events that allow team participation, participants can form teams at the venue on the day of the event.</li>
-            <li>Participants who register for the workshop will not be eligible to participate in any other event.</li>
-            <li>Food will be provided for all registered participants, with both Veg and Non-Veg options available.</li>
+            <li>
+              All tech event participants must bring their own devices to ensure
+              smooth and uninterrupted participation.
+            </li>
+            <li>
+              Participants can register for only one event from the above list.
+            </li>
+            <li>
+              If not attending the CTF, participants may register for any two of
+              the remaining technical events.
+            </li>
+            <li>
+              Registration must be done individually. For events that allow team
+              participation, participants can form teams at the venue on the day
+              of the event.
+            </li>
+            <li>
+              Participants who register for the workshop will not be eligible to
+              participate in any other event.
+            </li>
+            <li>
+              Food will be provided for all registered participants, with both
+              Veg and Non-Veg options available.
+            </li>
           </ul>
         </div>
       </section>
