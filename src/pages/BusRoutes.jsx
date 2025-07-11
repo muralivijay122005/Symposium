@@ -380,7 +380,7 @@ function BusRoute() {
               }}
               onFocus={() => setShowSuggestions(true)} // Show on focus
               onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-              className="w-full px-4 py-2 rounded-lg bg-white/5 text-white border border-white/20 placeholder-white/50 focus:outline-none text-sm"
+              className="w-full px-4 py-3 rounded-lg bg-white/5 text-white border border-white/20 placeholder-white/50 focus:outline-none text-sm"
             />
             {showSuggestions && inputQuery.trim() && (
               <ul className="absolute z-20 w-full mt-1 bg-neutral-900 border border-white/20 rounded-lg max-h-48 overflow-y-auto">
@@ -392,7 +392,7 @@ function BusRoute() {
                         handleSuggestionClick(suggestion);
                         setShowSuggestions(false); // Hide when clicking a suggestion
                       }}
-                      className="px-4 py-2 cursor-pointer hover:bg-white/10 text-white/80"
+                      className="px-4 py-3 cursor-pointer hover:bg-white/10 text-white/80"
                     >
                       {suggestion}
                     </li>
@@ -410,7 +410,7 @@ function BusRoute() {
                 setSelectedRoute(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full appearance-none px-4 py-2 pr-10 rounded-lg bg-white/5 text-white border border-white/20 focus:outline-none text-sm"
+              className="w-full appearance-none px-4 py-3 pr-10 rounded-lg bg-white/5 text-white border border-white/20 focus:outline-none text-sm"
             >
               <option value="None" className="bg-neutral-900 text-white">
                 Select Route
