@@ -1,4 +1,3 @@
-import "aos/dist/aos.css";
 import { FiCalendar, FiMapPin, FiMail } from "react-icons/fi";
 
 const About = ({ refProp }) => {
