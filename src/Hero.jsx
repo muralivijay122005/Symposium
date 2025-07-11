@@ -1,14 +1,16 @@
+import React, { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import ShinyText from "./components/ShinyText";
 import Aurora from "./components/Aurora";
-import Countdown from "./Countdown";
+
+const Countdown = lazy(() => import("./Countdown"));
+const ShinyText = lazy(() => import("./components/ShinyText"));
 
 const Hero = () => {
-  const navigate = useNavigate(); // React Router hook
+  const navigate = useNavigate();
 
   return (
     <div className="relative w-full select-none h-screen bg-black overflow-hidden">
-      {/* Aurora background */}
+      {/* Aurora Background (non-lazy) */}
       <Aurora
         colorStops={["#3A29FF", "#00FFFF"]}
         blend={20}
@@ -28,22 +30,24 @@ const Hero = () => {
         Noctivus '25
       </div>
 
-      {/* Countdown */}
+      {/* Countdown - Lazy Loaded */}
       <div className="absolute top-120 md:top-105 left-1/2 transform -translate-x-1/2">
         <Countdown />
       </div>
 
-      {/* Register Button */}
+      {/* Register Button with Lazy-loaded ShinyText */}
       <button
         onClick={() => navigate("/codeofconduct")}
         className="absolute top-150 md:top-130 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 pt-3 text-white font-funnel leading-none"
       >
-        <ShinyText
-          text="REGISTER NOW"
-          disabled={false}
-          speed={5}
-          className="text-md md:text-lg"
-        />
+        <Suspense fallback={<span className="text-white">Loading...</span>}>
+          <ShinyText
+            text="REGISTER NOW"
+            disabled={false}
+            speed={5}
+            className="text-md md:text-lg"
+          />
+        </Suspense>
       </button>
     </div>
   );
