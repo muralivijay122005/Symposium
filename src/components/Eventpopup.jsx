@@ -1,3 +1,4 @@
+// EventPopup.jsx
 import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -22,7 +23,7 @@ const EventPopup = ({ event, onClose }) => {
   );
 
   const renderListBlock = (title, list) =>
-    list && list.length > 0 ? (
+    list?.length > 0 ? (
       <div>
         <h3 className="text-md font-medium">{title}</h3>
         <ul className="list-disc list-inside text-md text-neutral-300 space-y-1">
@@ -41,7 +42,7 @@ const EventPopup = ({ event, onClose }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.05 } }}
           exit={{ opacity: 0, transition: { duration: 0.1 } }}
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center will-change-auto"
         >
           <motion.div
             key="popup"
@@ -55,7 +56,7 @@ const EventPopup = ({ event, onClose }) => {
             exit={{
               scale: 0.85,
               opacity: 0,
-              transition: { duration: 0.15, ease: [0.4, 0, 0.2, 1] },
+              transition: { duration: 0.15 },
             }}
             className="bg-neutral-900 font-funnel text-white rounded-2xl p-6 w-[90%] max-w-lg relative space-y-4 max-h-[90vh] overflow-y-auto scrollbar-hide"
           >
@@ -67,12 +68,10 @@ const EventPopup = ({ event, onClose }) => {
             </button>
 
             <h2 className="text-xl font-semibold">{event.title}</h2>
-
             {event.schedule && renderTextBlock("Schedule", event.schedule)}
             {event.teamSize && renderTextBlock("Team Size", event.teamSize)}
             {event.overview && renderTextBlock("Overview", event.overview)}
             {event.format && renderTextBlock("Format", event.format)}
-
             {renderListBlock("Rules", event.rules)}
             {renderListBlock("Topics", event.topics)}
             {renderListBlock(
