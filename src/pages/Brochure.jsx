@@ -42,7 +42,7 @@ const Brochure = () => {
   };
 
   const slides = Array.from({ length: totalSlides }).map(() => ({
-    src: "/vec.png",
+    src: "/vec.webp",
     alt: "Brochure Preview",
   }));
 
