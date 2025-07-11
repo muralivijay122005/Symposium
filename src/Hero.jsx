@@ -18,7 +18,7 @@ const Hero = () => {
 
       {/* Logo */}
       <img
-        src="/Logo.png"
+        src="/Logo.webp"
         alt="Noctivus Logo"
         className="absolute left-1/2 transform -translate-x-1/2 top-10 md:top-0 w-[400px] md:w-[440px] max-w-full z-50 mx-auto mix-blend-screen"
       />
