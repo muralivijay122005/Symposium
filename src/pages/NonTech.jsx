@@ -49,7 +49,7 @@ const events = [
     description: "Booyah Awaits",
     date: "Aug 22, 2025",
     venue: "GameZone",
-    schedule: "10:00 AM - 11:30 AM",
+    schedule: "11:30 AM - 01:00 PM",
     overview:
       "This Free Fire tournament encourages fair play, teamwork, and a strong competitive spirit. All players must follow the rules and uphold the spirit of the game.",
     format: `Team Size: 4 members\nRound 1: BR Mode – Top 2 teams move to Finals\nFinals follow same rules.`,
