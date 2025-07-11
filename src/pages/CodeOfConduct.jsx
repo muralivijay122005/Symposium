@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Aurora from "./../components/Aurora";
 import { IoWarningOutline, IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import Aurora from "./../components/Aurora"; // Direct import ✅
 
 const CodeOfConduct = () => {
   const [agreed, setAgreed] = useState(false);
@@ -13,8 +13,8 @@ const CodeOfConduct = () => {
   };
 
   return (
-    <section className="relative w-full h-screen bg-black text-white font-funnel ">
-      {/* Aurora Background (behind everything, including fixed header) */}
+    <section className="relative w-full h-screen bg-black text-white font-funnel">
+      {/* Aurora Background */}
       <div className="absolute inset-0 z-0">
         <Aurora
           colorStops={["#3A29FF", "#00FFFF"]}
@@ -25,7 +25,7 @@ const CodeOfConduct = () => {
       </div>
 
       {/* Fixed Header */}
-      <div className="fixed top-0 left-0 w-full z-20 px-10 md:px-20 lg:px-40 pt-20 pb-4 backdrop-blur-xl ">
+      <div className="fixed top-0 left-0 w-full z-20 px-10 md:px-20 lg:px-40 pt-20 pb-4 backdrop-blur-xl">
         <h1 className="text-md md:text-lg text-center mb-6">CODE OF CONDUCT</h1>
         <hr className="border-0.5 border-white/20 w-full" />
       </div>
@@ -38,7 +38,7 @@ const CodeOfConduct = () => {
         <IoArrowBackOutline className="text-lg" />
       </button>
 
-      {/* Scrollable Content BELOW fixed header */}
+      {/* Scrollable Content */}
       <div className="relative z-10 px-10 md:px-20 lg:px-40 pt-[160px] pb-20 h-full scrollbar-hide overflow-y-auto">
         <div className="space-y-10 text-white/60 leading-7 text-md">
           <ul className="list-disc ml-6 mt-6 space-y-6">
