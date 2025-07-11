@@ -1,30 +1,41 @@
 import { useEffect, useRef, useState } from "react";
 
+const isTouchDevice = () =>
+  typeof window !== "undefined" &&
+  ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
 const CustomCursor = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const cursorRef = useRef(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
   const currentX = useRef(0);
   const currentY = useRef(0);
   const rafRef = useRef(null);
+  const [enabled, setEnabled] = useState(false);
 
+  // Run only on non-touch devices
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    if (isTouchDevice()) return;
+    setEnabled(true);
   }, []);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (!enabled) return;
+
+    let isTabVisible = true;
 
     const handleMouseMove = (e) => {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
+    };
+
+    const handleVisibilityChange = () => {
+      isTabVisible = !document.hidden;
+      if (isTabVisible) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        cancelAnimationFrame(rafRef.current);
+      }
     };
 
     const animate = () => {
@@ -37,24 +48,26 @@ const CustomCursor = () => {
         }px, ${currentY.current - 20}px, 0)`;
       }
 
-      rafRef.current = requestAnimationFrame(animate);
+      if (isTabVisible) rafRef.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [isMobile]);
+  }, [enabled]);
 
-  if (isMobile) return null;
+  if (!enabled) return null;
 
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9999] mix-blend-difference bg-white transition-transform duration-75 ease-out"
+      className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9999] mix-blend-difference bg-white transition-transform duration-75 ease-out will-change-transform"
     />
   );
 };
