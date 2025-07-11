@@ -38,7 +38,7 @@ const Coordinators = ({ refProp }) => {
   return (
     <section
       ref={refProp}
-      className="min-h-screen px-6 md:px-20 lg:px-32 text-white py-10 space-y-12"
+      className="min-h-screen px-10 md:px-20 lg:px-32 text-white py-10 space-y-12"
     >
       <div>
         <p className="text-md font-funnel text-center pt-20 pb-10">
