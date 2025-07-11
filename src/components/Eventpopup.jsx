@@ -23,7 +23,7 @@ const EventPopup = ({ event, onClose }) => {
 
   const renderListBlock = (title, list) =>
     list && list.length > 0 ? (
-      <div className="">
+      <div>
         <h3 className="text-md font-medium">{title}</h3>
         <ul className="list-disc list-inside text-md text-neutral-300 space-y-1">
           {list.map((item, i) => (
@@ -68,31 +68,19 @@ const EventPopup = ({ event, onClose }) => {
 
             <h2 className="text-xl font-semibold">{event.title}</h2>
 
-            {/* {
-              <p className="text-md ">
-                <strong>Date:</strong> Aug 02, 2025
-              </p>
-            } */}
+            {event.schedule && renderTextBlock("Schedule", event.schedule)}
+            {event.teamSize && renderTextBlock("Team Size", event.teamSize)}
+            {event.overview && renderTextBlock("Overview", event.overview)}
+            {event.format && renderTextBlock("Format", event.format)}
 
-            {/* {event.venue && (
-              <p className="text-md">
-                <strong>Venue:</strong> {event.venue}
-              </p>
-            )} */}
-
-            {event.schedule &&
-              renderTextBlock("Schedule:", event.schedule)}
-
-            {event.overview &&
-              renderTextBlock("Overview:", event.overview)}
-
-            {event.format &&
-              renderTextBlock("Format:", event.format)}
-
-            {renderListBlock("Submission Guidelines:", event.submissionGuidelines)}
-            {renderListBlock("Reporting Guidelines:", event.reporting)}
-            {renderListBlock("Rules:", event.rules)}
-            {renderListBlock("Prohibited Actions:", event.prohibited)}
+            {renderListBlock("Rules", event.rules)}
+            {renderListBlock("Topics", event.topics)}
+            {renderListBlock(
+              "Submission Guidelines",
+              event.submissionGuidelines
+            )}
+            {renderListBlock("Reporting Guidelines", event.reporting)}
+            {renderListBlock("Prohibited Actions", event.prohibited)}
           </motion.div>
         </motion.div>
       )}
