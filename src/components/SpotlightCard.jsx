@@ -1,3 +1,4 @@
+// SpotlightCard.jsx
 import { useRef, useState } from "react";
 
 const SpotlightCard = ({
